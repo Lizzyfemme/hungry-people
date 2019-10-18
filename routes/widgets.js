@@ -8,7 +8,7 @@
 const express = require('express');
 const router  = express.Router();
 
-module.exports = (db) => {
+module.exports = (db, twilioClient) => {
   router.get("/", (req, res) => {
     let query = `SELECT * FROM widgets`;
     console.log(query);
