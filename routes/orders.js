@@ -10,7 +10,11 @@ const router  = express.Router();
 
 module.exports = (db, twilioClient) => {
   router.get("/new", (req, res) => {
-    res.render('./orders/order');
+    res.render('orders/order');
+  });
+
+  router.get("/checkout", (req, res) => {
+    res.render('orders/checkout');
   });
 
 
