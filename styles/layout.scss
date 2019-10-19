@@ -1,9 +1,35 @@
 // See: https://sass-lang.com/
 
+$bg-color:#FFFFFF;
+$accent-color:#000000;
+$highlight-color:#122517;
+$main-font:Exo 2;
+
+
 body {
-  background-color: #EEE;
+  background-color:$bg-color;
+  font-family: $main-font;
 
   h1 {
-    color: #244751;
+    color:$highlight-color;
+  }
+  nav {
+    background-color:$highlight-color;
+    position: fixed;
+    width:100vw;
+    height:15vh;
+    z-index:3;
+    top:0;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button{
+      outline:none;
+      background-color:$accent-color;
+      width:10vw;
+      height:5vh;
+
+    }
   }
 }
