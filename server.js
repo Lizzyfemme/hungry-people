@@ -17,9 +17,8 @@ const db = new Pool(dbParams);
 db.connect();
 
 // Twilio API
-const accountSid = 'AC3681538aac37e14042d2d07160c0a6fd';
-const authToken = 'cb28a1493ccc6daf6c38079cca2e9858';
-const twilioClient = require('twilio')(accountSid, authToken);
+const twilioCredentials = require('./lib/twilio.js');
+const twilioClient = require('twilio')(...twilioCredentials);
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
