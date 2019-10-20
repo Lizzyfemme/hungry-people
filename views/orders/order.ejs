@@ -18,7 +18,8 @@
         <%= menuItem.price %>
       </span>
 
-      <input type="hidden" name="menu_item_id" value="<%= menuItem.id %>">
+      <input type="hidden" class="menu_item_id" name="menu_item_id" value="<%= menuItem.id %>">
+      <input type="hidden" class="menu_item_price" name="menu_item_price" value="<%= menuItem.price %>">
 
       <label for="quantity">QTY</label>
       <input type="number" step="1" min="0" max="" name="menu_item_<%= menuItem.id %>_quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
@@ -32,8 +33,8 @@
       Your total is:
     </span>
 
-    <span>
-      <input type="text">
+    <span id="sub-total">
+      $0.00
     </span>
 
     <span>
