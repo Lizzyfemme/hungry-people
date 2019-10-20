@@ -10,7 +10,16 @@ const router  = express.Router();
 
 module.exports = (db, twilioClient) => {
   router.get("/new", (req, res) => {
-    res.render('orders/order');
+    db.query(`SELECT id, menu_item_name, description, photo_url, price FROM menu_items;`)
+      .then(data => {
+        const menuItems = data.rows;
+        res.render('orders/order', { menuItems });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
   });
 
   router.get("/checkout", (req, res) => {
