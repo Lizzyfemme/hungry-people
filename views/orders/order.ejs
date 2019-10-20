@@ -4,15 +4,18 @@
   <form action="/orders" method="post">
     <% for (const menuItem of menuItems) { %>
     <section>
+
+      <img src="<%= menuItem.photo_url %>">
+      <div class="words">
       <header class="menu">
         <h2 class="menu_item_name"><%= menuItem.menu_item_name %></h2>
       </header>
 
-      <img src="<%= menuItem.photo_url %>">
 
-      <span class="description">
+
+      <p class="description">
         <%= menuItem.description %>
-      </span>
+      </p>
 
       <span class="price">
         <%= menuItem.price %>
@@ -23,6 +26,7 @@
 
       <label for="quantity">QTY</label>
       <input type="number" step="1" min="0" max="" name="menu_item_quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+    </div>
     </section>
     <% } %>
 
