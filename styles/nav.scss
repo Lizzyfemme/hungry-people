@@ -16,7 +16,6 @@ nav {
   justify-content: space-between;
   align-items: center;
 
-
   button{
     outline:none;
     border-color:#FFFFFF;
@@ -25,14 +24,16 @@ nav {
     font-weight: bolder;
     padding-left:2.5%;
     padding-right:2.5%;
-
     &:hover{
       background-color:$hover-color;
     }
-
     &:active{
       background-color:$active-color;
-    }
 
+    }
+    a{
+      color:inherit;
+      text-decoration: inherit;
+    }
   }
 }

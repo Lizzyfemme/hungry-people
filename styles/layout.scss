@@ -11,6 +11,7 @@ body {
   background-color:$bg-color;
   font-family: $main-font;
 
+
   h1 {
     color:$highlight-color;
   }
@@ -27,5 +28,29 @@ body {
   color: $bg-color;
   text-align: center;
   font-size: 80px;
+}
+#image_container{
+  display: flex;
+  justify-content: space-between;
+  margin-left:2.5%;
+  margin-right:2.5%;
+  margin-top:5%;
+}
+.splash_image{
+  display:block;
+  background-color: $highlight-color;
+  height:250px;
+  width:250px;
+}
 
+footer{
+  text-transform: uppercase;
+  background-color: $highlight-color;
+  text-align: center;
+  color:$bg-color;
+  margin-top:5vh;
+  padding-top:7vh;
+  padding-bottom:7vh;
+  margin-right:2.5%;
+  margin-left:2.5%;
 }
