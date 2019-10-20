@@ -4,6 +4,7 @@ $bg-color:#FFFFFF;
 $accent-color:#000000;
 $highlight-color:#122517;
 $main-font: Montserrat;
+$accent-font: Pacifico;
 
 
 body {
@@ -13,29 +14,18 @@ body {
   h1 {
     color:$highlight-color;
   }
-  nav {
-    background-color:$highlight-color;
-    position: fixed;
-    width:100vw;
-    height:15vh;
-    z-index:3;
-    top:0;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
 
-    button{
-      outline:none;
-      background-color:$accent-color;
-      width:10vw;
-      height:5vh;
-
-    }
-  }
 }
 #logo{
-  height:60vh;
   display:block;
-  margin-left: auto;
-  margin-right:auto;
+  margin-left: 2.5%;
+  margin-right:2.5%;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  background: $highlight-color;
+  font-family: $accent-font;
+  color: $bg-color;
+  text-align: center;
+  font-size: 80px;
+
 }
