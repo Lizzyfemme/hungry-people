@@ -1,0 +1,36 @@
+$bg-color:#FFFFFF;
+$hover-color:#DCDBD2;
+
+#main_table{
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  display: table;
+  width: 100%;
+  thead{
+    text-transform: uppercase;
+    background-color: $bg-color;
+    th{
+      background-color: $bg-color;
+    }
+  }
+  td{
+    padding:10px;
+    }
+  tr{
+    &:nth-child(odd){
+    background-color: $hover-color;
+    }
+    &:nth-child(even){
+      background-color: $bg-color;
+      }
+  }
+  .order_table{
+    background-color: transparent;
+    tr{
+      background-color: transparent;
+    }
+  }
+}
+
+
+

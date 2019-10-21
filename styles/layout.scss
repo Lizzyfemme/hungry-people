@@ -3,6 +3,7 @@
 $bg-color:#FFFFFF;
 $accent-color:#000000;
 $highlight-color:#122517;
+$hover-color:#DCDBD2;
 $main-font: Montserrat;
 $accent-font: Pacifico;
 
@@ -55,15 +56,4 @@ footer{
   margin-right:2.5%;
   margin-left:2.5%;
 }
-table{
-  border-color: $accent-color;
-  border-width: 3px;
-  border-style: solid;
-}
-td{
 
-    border-color: $accent-color;
-    border-width: 3px;
-    border-style: solid;
-
-}

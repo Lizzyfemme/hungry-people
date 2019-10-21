@@ -6,20 +6,20 @@
 
 <section id="bill">
 
-  <table>
-    <tr id="title">
-      <td>Order Number</td>
-      <td>Estimated Time</td>
-      <td>Phone Number</td>
-      <td>Orders</td>
-      <td colspan="2">Message Customer</td>
-    </tr>
+  <table id="main_table">
+    <thead>
+      <th>Order Number</th>
+      <th>Estimated Time</th>
+      <th>Phone Number</th>
+      <th>Orders</th>
+      <th colspan="2">Message Customer</th>
+    </thead>
     <tr>
       <td>88888</td>
       <td>5 minutes</td>
       <td>604-123-4567</td>
       <td>
-        <table>
+        <table class="order_table">
           <tr>
             <td>1</td>
             <td>Pepperoni </td>
@@ -33,6 +33,25 @@
       <td><button>message</button></td>
       <td><button>complete</button></td>
     </tr>
+    <tr>
+        <td>88888</td>
+        <td>5 minutes</td>
+        <td>604-123-4567</td>
+        <td>
+          <table class="order_table">
+            <tr>
+              <td>1</td>
+              <td>Pepperoni </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Fungi</td>
+            </tr>
+          </table>
+        </td>
+        <td><button>message</button></td>
+        <td><button>complete</button></td>
+      </tr>
   </table>
 
 </section>
