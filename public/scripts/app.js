@@ -15,7 +15,7 @@ const updateTotal = () => {
 
   $quantityInputs.each(function (index) {
     const qty = Number.parseInt(this.value);
-    const price = $(this).siblings(".menu_item_price")[0].value.slice(1);
+    const price = $(this).parent().siblings(".menu_item_price")[0].value.slice(1);
 
     subTotal += qty * price;
   });
