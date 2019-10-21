@@ -1,12 +1,61 @@
-section{
+$highlight-color:#122517;
+#menu_container{
+  margin-top: 35px;
+  color: $highlight-color;
+}
+article{
   margin-left:2.5%;
   margin-right:2.5%;
-  margin-top:10px;
+  height: 250px;
+  margin-bottom:2.5%;
   display: flex;
 
   img{
     width:250px;
     height:250px;
+    margin-right:2.5%;
   }
+  .words{
+    width: 100%;
 
+    header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height:70px;
+      h2{
+      display:block;
+      font-weight: bold;
+      text-transform: uppercase;
+      }
+      h3{
+      display:block;
+      }
+    }
+    .description_and_quantity{
+      display:flex;
+      flex-direction:column;
+      justify-content: space-between;
+      height:180px;
+
+      p{
+        font-size: 18px;
+        display: block;
+        text-transform: capitalize;
+        }
+      .quantity_field {
+        display: flex;
+
+        label{
+          display: block;
+          margin-right: 2.5%;
+        }
+      input{
+        display: block;
+        outline: none;
+        border:none;
+      }
+      }
+    }
+  }
 }

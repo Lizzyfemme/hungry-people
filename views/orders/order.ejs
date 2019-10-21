@@ -1,33 +1,26 @@
 <% layout('../layout.ejs') -%>
 
-<main class="container">
+<main id="menu_container">
   <form action="/orders" method="post">
     <% for (const menuItem of menuItems) { %>
-    <section>
-
-      <img src="<%= menuItem.photo_url %>">
+    <article>
+      <img src="<%= menuItem.photo_url %>"></img>
       <div class="words">
-      <header class="menu">
-        <h2 class="menu_item_name"><%= menuItem.menu_item_name %></h2>
-      </header>
-
-
-
-      <p class="description">
-        <%= menuItem.description %>
-      </p>
-
-      <span class="price">
-        <%= menuItem.price %>
-      </span>
-
-      <input type="hidden" class="menu_item_id" name="menu_item_id" value="<%= menuItem.id %>">
-      <input type="hidden" class="menu_item_price" name="menu_item_price" value="<%= menuItem.price %>">
-
-      <label for="quantity">QTY</label>
-      <input type="number" step="1" min="0" max="" name="menu_item_quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-    </div>
-    </section>
+        <header class="menu">
+          <h2 class="menu_item_name"><%= menuItem.menu_item_name %></h2>
+          <h3 class="price"><%= menuItem.price %></h3>
+        </header>
+        <div class="description_and_quantity">
+          <p class="description"><%= menuItem.description %></p>
+          <input type="hidden" class="menu_item_id" name="menu_item_id" value="<%= menuItem.id %>">
+          <input type="hidden" class="menu_item_price" name="menu_item_price" value="<%= menuItem.price %>">
+          <div class="quantity_field">
+            <label for="quantity">QTY</label>
+            <input type="number" step="1" min="0" max="" name="menu_item_quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+          </div>
+        </div>
+      </div>
+    </article>
     <% } %>
 
   <br>
