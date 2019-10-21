@@ -10,6 +10,8 @@ const router  = express.Router();
 
 module.exports = (db, twilioClient) => {
   router.post("/", (req, res) => {
+    let orderID;
+    const restaurantPhone = '7782305559';
     const customerPhone = req.params.customer_phone;
     const orderedAt = new Date();
     const values = [customerPhone, orderedAt];
@@ -20,13 +22,14 @@ module.exports = (db, twilioClient) => {
     RETURNING *;
     `, values)
       .then(orderData => {
+        orderID = orderData.rows[0].id;
         const idParams = req.body.menu_item_id;
         const qtyParams = req.body.menu_item_quantity;
         const lineItemRows = [];
 
         for (let i = 0; i < idParams.length; i ++) {
           if (qtyParams[i] > 0) {
-            lineItemRows.push(`(${idParams[i]}, ${orderData.rows[0].id}, ${qtyParams[i]})`);
+            lineItemRows.push(`(${idParams[i]}, ${orderID}, ${qtyParams[i]})`);
           }
         }
 
@@ -49,11 +52,12 @@ We'll send you a text shortly to let you know how long your order will take.
       })
       .then(() => {
         return twilioClient.messages.create({
-          to: '7782305559',
+          to: restaurantPhone,
           from: '+17609708429',
           body: `
 A customer has placed an order!
-Go to your orders dashboard to let the customer know how long their order will be.
+Please let the customer know how long their order will take by going to:
+http://localhost:8080/restaurant/orders/${orderID}
 `
         });
       })
