@@ -3,9 +3,6 @@ $(() => {
   $quantityInputs.change((el) => {
     updateTotal();
   });
-  // $quantityInputs.each(function (index) {
-  //   $(this).siblings(".menu_item_price").value;
-  // });
 });
 
 const updateTotal = () => {
