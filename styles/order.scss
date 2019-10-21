@@ -1,4 +1,7 @@
 $highlight-color:#122517;
+$hover-color:#DCDBD2;
+$active-color:#99957A;
+
 #menu_container{
   margin-top: 35px;
   color: $highlight-color;
@@ -57,5 +60,32 @@ article{
       }
       }
     }
+  }
+}
+section{
+  display:flex;
+  align-items:center;
+  justify-content:space-evenly;
+}
+input{
+  border:none;
+  outline:none;
+}
+button{
+  outline:none;
+  border-color:#FFFFFF;
+  height:5vh;
+  text-transform: uppercase;
+  font-weight: bolder;
+  padding-left:2.5%;
+  padding-right:2.5%;
+  &:hover{
+    background-color:$hover-color;
+  }
+  &:active{
+    background-color:$active-color;
+  }
+  label{
+    margin-left: 20px;
   }
 }
