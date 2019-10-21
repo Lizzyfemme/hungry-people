@@ -1,37 +1,38 @@
 <% layout('../layout.ejs') -%>
 
 <div id="app">
-    <h1>Incoming orders below!</h1>
-    </div>
+  <h1>Incoming orders below!</h1>
+</div>
 
-    <section id="bill">
+<section id="bill">
 
-      <hr>
+  <table>
+    <tr id="title">
+      <td>Order Number</td>
+      <td>Estimated Time</td>
+      <td>Phone Number</td>
+      <td>Orders</td>
+      <td colspan="2">Message Customer</td>
+    </tr>
+    <tr>
+      <td>88888</td>
+      <td>5 minutes</td>
+      <td>604-123-4567</td>
+      <td>
+        <table>
+          <tr>
+            <td>1</td>
+            <td>Pepperoni </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Fungi</td>
+          </tr>
+        </table>
+      </td>
+      <td><button>message</button></td>
+      <td><button>complete</button></td>
+    </tr>
+  </table>
 
-      <div>
-        <span> Order Number: 88888 </span>
-        <span> "5 minutes" </span>
-      </div>
-
-      <div>
-        Phone Number: 604-123-4567
-      </div>
-
-      <br>
-
-      <div>
-        <span> 1x Pepperoni </span>
-      </div>
-
-      <span>
-        <button>message</button>
-        <button>complete</button>
-      </span>
-
-      <br>
-
-      <hr>
-
-
-    </section>
-
+</section>

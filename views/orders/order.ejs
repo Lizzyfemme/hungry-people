@@ -1,5 +1,8 @@
 <% layout('../layout.ejs') -%>
 
+<head>
+  <title>Menu</title>
+</head>
 <main id="menu_container">
   <form action="/orders" method="post">
     <% for (const menuItem of menuItems) { %>
@@ -16,20 +19,21 @@
           <input type="hidden" class="menu_item_price" name="menu_item_price" value="<%= menuItem.price %>">
           <div class="quantity_field">
             <label for="quantity">QTY</label>
-            <input type="number" step="1" min="0" max="" name="menu_item_quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+            <input type="number" step="1" min="0" max="" name="menu_item_quantity" value="0" title="Qty"
+              class="input-text qty text" size="4" pattern="" inputmode="">
           </div>
         </div>
       </div>
     </article>
     <% } %>
 
-  <br>
-  <section>
-  <p>Your total is: </p>
-  <span id="sub-total">$0.00</span>
-  <label for="customer_phone">Phone number:</label>
-  <input type="text" name="customer_phone" placeholder="xxx-xxx-xxxx">
-  <input type="submit" name="submit" value="Place order">
-  </section>
+    <br>
+    <section>
+      <p>Your total is: </p>
+      <span id="sub-total">$0.00</span>
+      <label for="customer_phone">Phone number:</label>
+      <input type="text" name="customer_phone" placeholder="xxx-xxx-xxxx">
+      <input type="submit" name="submit" value="Place order">
+    </section>
   </form>
 </main>
