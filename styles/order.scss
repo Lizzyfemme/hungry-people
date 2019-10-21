@@ -1,91 +1,152 @@
-$highlight-color:#122517;
-$hover-color:#DCDBD2;
-$active-color:#99957A;
+$highlight-color: #122517;
+$hover-color: #dcdbd2;
+$active-color: #99957a;
 
-#menu_container{
+#menu_container {
   margin-top: 35px;
   color: $highlight-color;
 }
-article{
-  margin-left:2.5%;
-  margin-right:2.5%;
-  height: 250px;
-  margin-bottom:2.5%;
-  display: flex;
+article {
+  &:nth-of-type(odd) {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    height: 250px;
+    margin-bottom: 2.5%;
+    display: flex;
 
-  img{
-    width:250px;
-    height:250px;
-    margin-right:2.5%;
-  }
-  .words{
-    width: 100%;
-
-    header{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    height:70px;
-      h2{
-      display:block;
-      font-weight: bold;
-      text-transform: uppercase;
-      }
-      h3{
-      display:block;
-      }
+    img {
+      width: 250px;
+      height: 250px;
+      margin-right: 2.5%;
     }
-    .description_and_quantity{
-      display:flex;
-      flex-direction:column;
-      justify-content: space-between;
-      height:180px;
+    .words {
+      width: 100%;
 
-      p{
-        font-size: 18px;
-        display: block;
-        text-transform: capitalize;
-        }
-      .quantity_field {
+      header {
         display: flex;
-
-        label{
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        h2 {
           display: block;
-          margin-right: 2.5%;
+          font-weight: bold;
+          text-transform: uppercase;
         }
-      input{
-        display: block;
-        outline: none;
-        border:none;
+        h3 {
+          display: block;
+        }
       }
+      .description_and_quantity {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 180px;
+
+        p {
+          font-size: 18px;
+          display: block;
+          text-transform: capitalize;
+        }
+        .quantity_field {
+          display: flex;
+
+          label {
+            display: block;
+            margin-right: 2.5%;
+          }
+          input {
+            display: block;
+            outline: none;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+  &:nth-of-type(even) {
+    flex-direction: row-reverse;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    height: 250px;
+    margin-bottom: 2.5%;
+    display: flex;
+
+    img {
+      width: 250px;
+      height: 250px;
+      margin-left: 2.5%;
+    }
+    .words {
+      width: 100%;
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        h2 {
+          display: block;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+        h3 {
+          display: block;
+        }
+      }
+      .description_and_quantity {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 180px;
+
+        p {
+          font-size: 18px;
+          display: block;
+          text-transform: capitalize;
+        }
+        .quantity_field {
+          display: flex;
+
+          label {
+            display: block;
+            margin-right: 2.5%;
+          }
+          input {
+            display: block;
+            outline: none;
+            border: none;
+          }
+        }
       }
     }
   }
 }
-section{
-  display:flex;
-  align-items:center;
-  justify-content:space-evenly;
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
-input{
-  border:none;
-  outline:none;
+input {
+  border: none;
+  outline: none;
 }
-button{
-  outline:none;
-  border-color:#FFFFFF;
-  height:5vh;
+
+button {
+  outline: none;
+  border-color: #ffffff;
+  height: 5vh;
   text-transform: uppercase;
   font-weight: bolder;
-  padding-left:2.5%;
-  padding-right:2.5%;
-  &:hover{
-    background-color:$hover-color;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  &:hover {
+    background-color: $hover-color;
   }
-  &:active{
-    background-color:$active-color;
+  &:active {
+    background-color: $active-color;
   }
-  label{
+  label {
     margin-left: 20px;
   }
 }
