@@ -12,7 +12,7 @@ module.exports = (db, twilioClient) => {
   router.post("/", (req, res) => {
     let orderID;
     const restaurantPhone = '7782305559';
-    const customerPhone = req.params.customer_phone;
+    const customerPhone = req.body.customer_phone;
     const orderedAt = new Date();
     const values = [customerPhone, orderedAt];
 

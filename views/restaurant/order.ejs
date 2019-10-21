@@ -1,0 +1,26 @@
+<% layout('../layout.ejs') -%>
+
+<article class="order">
+  <header>
+    <h2><%= order.customer_phone %></h2>
+    <p>Ordered at: <%= order.ordered_at %></p>
+    <p>
+      Received at:
+      <% if (order.received_at) { %>
+        <%= received_at %>
+      <% } else { %>
+        <form action="/restaurant/orders/<%= order.id %>" method="post">
+          <label for="estimated-time">Estimated time:</label>
+          <input name="estimated-time" type="number">
+          <input type="submit" value="Confirm">
+        </form>
+      <% } %>
+    </p>
+    <p>Completed at: <%= order.completed_at || "" %></p>
+    <ul class="line-items">
+      <% for (const lineItem of order.lineItems) { %>
+      <li><%= lineItem.quantity %>&times;<%= lineItem.menu_item_name %></li>
+      <% } %>
+    </ul>
+  </header>
+</article>
