@@ -60,6 +60,9 @@ Go to your orders dashboard to let the customer know how long their order will b
       .then(() => {
         res.redirect('/orders/checkout');
       })
+
+      //implement another .then function to call back the selected items and recalculate the total price plus tax???
+
       .catch(err => {
         res
           .status(500)
