@@ -8,9 +8,9 @@ VALUES
 
 ('Pesto & Ricotta', 'Basil Pesto, Fresh Ricotta, Pine Nuts, Parmigiano, Bianco', 'http://ahintofwine.com/wp-content/uploads/2017/05/Hot-Italian-Sausage-Caramelized-Onion-and-Pesto-Pizza.jpg', 18.00),
 
-('Carbonara', 'Pecorino, Pancetta, Farm Egg, Bianco', 'https://images.squarespace-cdn.com/content/v1/5d924fed4b479f7b9acaf7c6/1569906258426-IA9RSX0GO2T43BI1ZT3B/ke17ZwdGBToddI8pDm48kIzNWfZh9v0nvEHU3WAJ1tF7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ooWhOa5cxQSJsU3rXf8luXAp4RuSF8fCIvAJcvjt_IcZoixb7Wm7IaIkEuLM8C6Ew/PIZZATWO.jpg?format=1500w', 19.00),
+('Carbonara', 'Pecorino, Pancetta, Farm Egg, Bianco', 'https://marinatakeaway.com/wp-content/uploads/2019/01/shutterstock_392146984.jpg?v=06e415f918c5', 19.00),
 
-('Pineapple & Ham', 'House-Smoked Ham, Roasted Pineapple, Confit Garlic, Rosemary, manchego, bianco', 'https://images.squarespace-cdn.com/content/v1/5d924fed4b479f7b9acaf7c6/1569906380894-OSVNTZE9D5NBDIKU2DE0/ke17ZwdGBToddI8pDm48kJKo3YTR7zgUvInmXMbZ6zZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0geeCvn1f36QDdcifB7yxGjTk-SMFplgtEhJ5kBshkhu5q5viBDDnY2i_eu2ZnquSA/PIZZAONE.jpg?format=1500w', 19.00),
+('Pineapple & Ham', 'House-Smoked Ham, Roasted Pineapple, Confit Garlic, Rosemary, manchego, bianco','https://foodscene.deliveroo.co.uk/assets/images/blogs/foodscene.deliveroo.co.uk/en/cuisine-inspiration/1xuae1hVL1cPIJEb9JCelzL0j9CppWTtueuSBx6pbFrg/h_16_classic_ham_and_pineapple.jpg?v=1.01', 19.00),
 
 ('Artichoke & Olive', 'Fior di Latte, Kalamata Olives, Artichokes, Garlic Confit, Basil, Marinara', ' https://mediad.publicbroadcasting.net/p/shared/npr/styles/x_large/nprshared/201805/474250506.jpg', 17.00),
 

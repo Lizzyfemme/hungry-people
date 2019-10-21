@@ -14,8 +14,10 @@ article {
   display: flex;
 
   img {
-    width: 250px;
-    height: 250px;
+    object-fit: cover;
+    max-width: 250px;
+    max-height: 250px;
+
     margin-right: 2.5%;
   }
   .words {
