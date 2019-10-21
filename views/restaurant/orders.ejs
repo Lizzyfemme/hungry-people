@@ -15,20 +15,18 @@
       <th colspan="2">Message Customer</th>
     </thead>
     <tr>
-      <td>88888</td>
+        <% for (const lineItem of lineItems) { %>
+      <td><%=id%></td>
       <td>5 minutes</td>
-      <td>604-123-4567</td>
+      <td><%=customer_phone%></td>
       <td>
         <table class="order_table">
           <tr>
-            <td>1</td>
-            <td>Pepperoni </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Fungi</td>
+            <td><%=quantity%></td>
+            <td><%=menu_item_name%></td>
           </tr>
         </table>
+        <% } %>
       </td>
       <td><button>message</button></td>
       <td><button>complete</button></td>
