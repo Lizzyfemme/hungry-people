@@ -40,9 +40,11 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const orderRoutes = require("./routes/orders.js");
+const restaurantRoutes = require("./routes/restaurant.js");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/orders", orderRoutes(db, twilioClient));
+app.use("/restaurant", restaurantRoutes(db, twilioClient));
 // Note: mount other resources here, using the same pattern above
 
 

@@ -82,6 +82,5 @@ Go to your orders dashboard to let the customer know how long their order will b
     res.render('orders/checkout');
   });
 
-
   return router;
 };
