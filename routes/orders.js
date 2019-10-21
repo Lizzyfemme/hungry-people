@@ -16,13 +16,13 @@ module.exports = (db, twilioClient) => {
 
     db.query(`
     INSERT INTO orders (customer_phone, ordered_at)
-    VALUES ('${customerPhone}', '${orderedAt.toISOString()}')
+    VALUES ($1, $2)
     RETURNING *;
-    `)
+    `, values)
       .then(orderData => {
         const idParams = req.body.menu_item_id;
         const qtyParams = req.body.menu_item_quantity;
-        let lineItemRows = [];
+        const lineItemRows = [];
 
         for (let i = 0; i < idParams.length; i ++) {
           if (qtyParams[i] > 0) {
@@ -30,9 +30,11 @@ module.exports = (db, twilioClient) => {
           }
         }
 
+        const valuesString = lineItemRows.join(',\n') + ";";
+
         return db.query(`
         INSERT INTO line_items (menu_item_id, order_id, quantity)
-        VALUES ${lineItemRows.join(', ')};
+        VALUES ${valuesString};
         `);
       })
       .then(() => {
