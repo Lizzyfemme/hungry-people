@@ -11,7 +11,8 @@
       <% } else { %>
         <form action="/restaurant/orders/<%= order.id %>" method="post">
           <label for="estimated-time">Estimated time:</label>
-          <input name="estimated-time" type="number">
+          <input name="prep_time" type="number">
+          <input type="hidden" name="customer_phone" value="<%= order.customer_phone %>">
           <input type="submit" value="Confirm">
         </form>
       <% } %>

@@ -33,5 +33,31 @@ module.exports = (db, twilioClient) => {
       });
   });
 
+  router.post("/orders/:orderID", (req, res) => {
+    const receivedAt = new Date();
+    const customerPhone = req.body.customer_phone;
+    const prepTime = req.body.prep_time;
+
+    db.query(`
+    UPDATE orders
+    SET received_at = $1
+    WHERE id = $2
+    `, [ receivedAt, req.params.orderID ])
+      .then(() => {
+        return twilioClient.messages.create({
+          to: customerPhone,
+          from: '+17609708429',
+          body: `
+Your order has been received and will be ready in approximately ${prepTime} minutes. See you then!
+`
+        });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
   return router;
 };
