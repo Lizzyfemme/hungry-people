@@ -3,10 +3,6 @@ const router  = express.Router();
 
 module.exports = (db, twilioClient) => {
 
-  // router.get("/employee", (req, res) => {
-  //   res.render('restaurant/orders');
-  // });
-
   router.get("/orders/:orderID", (req, res) => {
     let order;
 
