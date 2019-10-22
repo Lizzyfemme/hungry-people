@@ -8,6 +8,7 @@ $(() => {
   form.on("submit", (event) => {
     const input = $("input[name=customer_phone]").val();
     const qty = $("input[name=menu_item_quantity]");
+    $('.error-message').html(``);
     validatePhone(input);
     validateQty(qty);
   });
@@ -25,9 +26,11 @@ const validatePhone = (input) => {
 
 const validateQty = (qty) => {
   let totalPizza = 0;
+  console.log(qty);
   for (let i = 0; i < qty.length; i++) {
-    totalPizza += Number.parseInt($(qty[i]).val());
-  }
+    const quantity = Number.parseInt($(qty[i]).val()) || 0;
+      totalPizza += quantity;
+  };
   if (totalPizza === 0) {
     event.preventDefault();
     const exisitingError = $('.error-message').text();
@@ -43,7 +46,7 @@ const updateTotal = () => {
   const $quantityInputs = $('.qty');
 
   $quantityInputs.each(function (index) {
-    const qty = Number.parseInt(this.value);
+    const qty = Number.parseInt(this.value) || 0;
     const menuItemEl = $(this).parentsUntil("article").parent()[0];
     const price = $(menuItemEl).find(".menu_item_price")[0].value.slice(1);
 
