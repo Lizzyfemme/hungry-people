@@ -99,7 +99,7 @@ http://localhost:8080/restaurant/orders/${orderID}
     `, [req.params.orderID])
       .then(lineItemsData => {
         const lineItems = lineItemsData.rows;
-        res.render('orders/checkout', { lineItems });
+        res.render('orders/checkout', { lineItems:lineItems });
       })
       .catch(err=> {
         res
