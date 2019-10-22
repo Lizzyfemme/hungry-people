@@ -62,7 +62,7 @@ http://localhost:8080/restaurant/orders/${orderID}
         });
       })
       .then(() => {
-        res.redirect('/orders/checkout');
+        res.redirect(`/orders/checkout/${orderID}`);
       })
 
       //implement another .then function to call back the selected items and recalculate the total price plus tax???
@@ -87,8 +87,25 @@ http://localhost:8080/restaurant/orders/${orderID}
       });
   });
 
-  router.get("/checkout", (req, res) => {
-    res.render('orders/checkout');
+  router.get("/checkout/:orderID", (req, res) => {
+    let menu_item;
+
+    db.query(`
+    SELECT menu_items.menu_item_name, menu_items.price, line_items.quantity
+    FROM menu_items
+    JOIN line_items ON menu_item_id = menu_items.id
+    JOIN orders ON order_id = orders.id
+    WHERE orders.id = $1;
+    `, [req.params.orderID])
+      .then(lineItemsData => {
+        const lineItems = lineItemsData.rows;
+        res.render('orders/checkout', { lineItems });
+      })
+      .catch(err=> {
+        res
+          .status(500)
+          .json({error: err.message });
+      });
   });
 
   return router;

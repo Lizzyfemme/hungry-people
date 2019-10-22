@@ -4,28 +4,30 @@
     <h1>Thank you, We have received your order!</h1>
   </div>
 
-  <div id="app">
+  <div>
     <h3>Your Order Summary:</h3>
   </div>
+
+  <%let total = 0 %>
+  <% for (const lineItem of lineItems) { %>
+  <% total += Number.parseInt(lineItem.price.slice(1)) %>
+
+  <div>
+    <span> <%=lineItem.menu_item_name%> </span>
+    <span> &times; <%=lineItem.quantity%> </span>
+  </div>
+
+  <% } %>
 
   <section id="bill">
 
     <hr>
 
-    <div>
-      <h3>Subtotal: </h3>
-
-    </div>
-    <div>
-      <h3>Taxes: </h3>
-
-    </div>
-
     <hr>
 
     <div>
-      <h2>Total: </h2>
-
+      <h2>Total: $<%=total.toFixed(2)%> </h2>
     </div>
+
   </section>
 
