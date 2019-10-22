@@ -1,9 +1,14 @@
-<% layout('../layout.ejs') -%>
+<% layout('../order-form.ejs') -%>
 
 <% block('title', 'Menu') -%>
 
 <main id="menu_container">
 
+  <h2>Place your order</h2>
+  <p>
+    Adjust the quantities of the pizzas you want to order, enter your phone
+    number, and place your order. Easy as (pizza) pie!
+  </p>
   <form action="/orders" method="post">
     <% for (const menuItem of menuItems) { %>
     <article>
@@ -28,20 +33,21 @@
     <% } %>
 
 
-  <br>
-  <section>
+    <br>
 
-  <div class="hiddenError error">
-      <span class="error-message">
-  </div>
+    <section class="cart">
+      <div class="hiddenError error">
+        <span class="error-message">
+      </div>
 
-  <p>Your total is: </p>
-  <span id="sub-total">$0.00</span>
-  <label for="customer_phone">Phone number:</label>
-  <input type="text" name="customer_phone" placeholder="xxx-xxx-xxxx">
-  <input type="submit" name="submit" value="Place order">
+      <p>Your total is: <span id="sub-total">$0.00</span></p>
 
-  </section>
+      <div class="inputs">
+        <label for="customer_phone">Phone number:</label>
+        <input type="text" name="customer_phone" placeholder="xxx-xxx-xxxx">
+        <input type="submit" name="submit" value="Place order">
+      </div>
+    </section>
 
   </form>
 </main>

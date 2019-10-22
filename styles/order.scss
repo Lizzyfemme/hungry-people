@@ -3,13 +3,12 @@ $hover-color: #dcdbd2;
 $active-color: #99957a;
 
 #menu_container {
-  margin: 5em auto;
+  margin: 5em auto 10em auto;
   width: 960px;
   color: $highlight-color;
 }
+
 article {
-  margin-left: 2.5%;
-  margin-right: 2.5%;
   height: 250px;
   margin-bottom: 2.5%;
   display: flex;
@@ -18,7 +17,6 @@ article {
     object-fit: cover;
     max-width: 250px;
     max-height: 250px;
-
     margin-right: 2.5%;
   }
   .words {
@@ -71,6 +69,7 @@ section {
   align-items: center;
   justify-content: space-evenly;
 }
+
 input {
   border: none;
   outline: none;
@@ -93,4 +92,45 @@ button {
   label {
     margin-left: 20px;
   }
+}
+
+.cart {
+  display: block;
+  background-color: $highlight-color;
+  color: $active-color;
+  width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 10px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  .hiddenError {
+    padding: 5px;
+  }
+  p {
+    float: right;
+  }
+  .inputs {
+    clear: both;
+    float: right;
+    label { margin-right: 10px; }
+    input[type=text] {
+      width: 150px;
+      margin: 10px;
+      padding: 10px;
+    }
+    input[type=submit] {
+      border: 2px solid white;
+      border-radius: 5px;
+      padding: 5px;
+      background-color: transparent;
+      margin-left: 10px;
+      color: white;
+    }
+  }
+  #sub-total { font-weight: bold; }
 }

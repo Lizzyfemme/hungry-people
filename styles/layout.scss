@@ -12,11 +12,9 @@ body {
   background-color:$bg-color;
   font-family: $main-font;
 
-
   h1 {
     color:$highlight-color;
   }
-
 }
 // #logo{
 //   display:block;
@@ -38,10 +36,12 @@ body {
   background-color: transparent;
   z-index: 1;
 }
+
 #video{
   background-color: $accent-color;
 }
-  video {
+
+video {
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
@@ -60,6 +60,7 @@ body {
   margin-right:2.5%;
   margin-top:35px;
 }
+
 .splash_image{
   display:block;
   object-fit: cover;
@@ -83,10 +84,6 @@ footer{
   background-color: $highlight-color;
   text-align: center;
   color:$bg-color;
-  margin-top:5vh;
   padding-top:7vh;
   padding-bottom:7vh;
-  margin-right:2.5%;
-  margin-left:2.5%;
 }
-
