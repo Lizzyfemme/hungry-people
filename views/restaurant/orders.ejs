@@ -13,6 +13,7 @@
       <th>Orders</th>
       <th colspan="2">Message Customer</th>
     </thead>
+
     <% for (const lineItem of lineItems) { %>
     <tr>
 
@@ -28,8 +29,13 @@
         </table>
       </td>
       <td><button>message</button></td>
-      <td><button>complete</button></td>
+      <td>
+        <form action="/restaurant/orders/<%= lineItem.id %>/complete" method="post">
+          <input type="submit" value="Complete">
+        </form>
+      </td>
     </tr>
     <% } %>
+
   </table>
 </section>
