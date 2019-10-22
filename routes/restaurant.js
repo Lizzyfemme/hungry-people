@@ -52,6 +52,9 @@ Your order has been received and will be ready in approximately ${prepTime} minu
 `
         });
       })
+      .then(() => {
+        res.redirect("/restaurant/employee");
+      })
       .catch(err => {
         res
           .status(500)

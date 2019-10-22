@@ -7,7 +7,7 @@
     <p>
       Received at:
       <% if (order.received_at) { %>
-        <%= received_at %>
+        <%= order.received_at %>
       <% } else { %>
         <form action="/restaurant/orders/<%= order.id %>" method="post">
           <label for="estimated-time">Estimated time:</label>
