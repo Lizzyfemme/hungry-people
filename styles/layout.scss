@@ -18,18 +18,22 @@ body {
   }
 
 }
-#logo{
-  display:block;
-  margin-left: 2.5%;
-  margin-right:2.5%;
-  margin-top:20px;
-  padding-top: 20px;
-  padding-bottom: 25px;
-  background: $highlight-color;
-  font-family: $accent-font;
-  color: $bg-color;
-  text-align: center;
-  font-size: 80px;
+// #logo{
+//   display:block;
+//   margin-left: 2.5%;
+//   margin-right:2.5%;
+//   margin-top:20px;
+//   padding-top: 20px;
+//   padding-bottom: 25px;
+//   background: $highlight-color;
+//   font-family: $accent-font;
+//   color: $bg-color;
+//   text-align: center;
+//   font-size: 80px;
+// }
+.banner{
+  max-width: 100%;
+  max-height: 100%;
 }
 #image_container{
   display: flex;

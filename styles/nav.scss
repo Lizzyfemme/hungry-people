@@ -16,7 +16,7 @@ nav {
   justify-content: space-between;
   align-items: center;
 
-  button{
+  button {
     outline:none;
     border-color:#FFFFFF;
     height:5vh;
@@ -25,14 +25,19 @@ nav {
     padding-left:2.5%;
     padding-right:2.5%;
     &:hover{
-      background-color:$hover-color;
+      background-color:$bg-color;
     }
     &:active{
-      background-color:$active-color;
+      background-color:$bg-color;
     }
     a{
       color:inherit;
       text-decoration: inherit;
     }
   }
+}
+
+.home-button img {
+  width: 89px;
+  height: auto;
 }
