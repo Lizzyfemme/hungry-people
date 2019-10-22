@@ -16,7 +16,7 @@ router.get("/employee", (req, res) => {
     .then(data => {
       const lineItems = data.rows;
       console.log(lineItems)
-      res.render('restaurant/orders'),{ lineItems };
+      res.render('restaurant/orders', { lineItems:lineItems });
     })
     .catch(err => {
       res

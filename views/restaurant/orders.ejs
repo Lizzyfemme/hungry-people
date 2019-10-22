@@ -16,23 +16,22 @@
     <% for (const lineItem of lineItems) { %>
     <tr>
 
-      <td><%= orders.id %></td>
+      <td><%= lineItem.id %></td>
       <td>5 minutes</td>
-      <td><%= orders.customer_phone %></td>
+      <td><%= lineItem.customer_phone %></td>
       <td>
         <table class="order_table">
           <tr>
-            <td><%= line_items.quantity %></td>
-            <td><%= menu_items.menu_item_name %></td>
+            <td><%= lineItem.quantity %></td>
+            <td><%= lineItem.menu_item_name %></td>
           </tr>
-          <% } %>
 
         </table>
-
       </td>
       <td><button>message</button></td>
       <td><button>complete</button></td>
     </tr>
+    <% } %>
     <tr>
       <td>88888</td>
       <td>5 minutes</td>
