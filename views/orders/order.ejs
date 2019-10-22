@@ -9,7 +9,7 @@
     Adjust the quantities of the pizzas you want to order, enter your phone
     number, and place your order. Easy as (pizza) pie!
   </p>
-  <form action="/orders" method="post">
+  <form action="/orders" method="post" class="new-order">
     <% for (const menuItem of menuItems) { %>
     <article>
       <img src="<%= menuItem.photo_url %>"></img>

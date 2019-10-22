@@ -1,6 +1,6 @@
 $(() => {
   const $quantityInputs = $('.qty');
-  const form = $('form');
+  const form = $('form.new-order');
   $($(".cart")[0]).hide();
 
   $quantityInputs.change((el) => {
