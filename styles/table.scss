@@ -19,9 +19,18 @@ $hover-color:#DCDBD2;
   tr{
     &:nth-child(odd){
     background-color: $hover-color;
+    button{
+      background-color: $hover-color;
+      outline-color: transparent;
+      border-color: transparent;
+      &:hover{
+        background-color: $bg-color;
+      }
+    }
     }
     &:nth-child(even){
       background-color: $bg-color;
+
       }
   }
   .order_table{
