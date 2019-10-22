@@ -1,18 +1,19 @@
 <% layout('../layout.ejs') -%>
 
+<head>
+  <title>Checkout</title>
+</head>
+
   <div id="app">
     <h1>Thank you, We have received your order!</h1>
   </div>
 
-  <div>
-    <h3>Your Order Summary:</h3>
-  </div>
-
   <%let total = 0 %>
   <% for (const lineItem of lineItems) { %>
-  <% total += Number.parseInt(lineItem.price.slice(1)) %>
+    <% total += Number.parseInt(lineItem.price.slice(1)) %>
 
-  <div>
+    <div class="summary">
+    <h2>Your Order Summary:</h2>
     <span> <%=lineItem.menu_item_name%> </span>
     <span> &times; <%=lineItem.quantity%> </span>
   </div>

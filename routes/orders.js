@@ -65,8 +65,6 @@ http://localhost:8080/restaurant/orders/${orderID}
         res.redirect(`/orders/checkout/${orderID}`);
       })
 
-      //implement another .then function to call back the selected items and recalculate the total price plus tax???
-
       .catch(err => {
         res
           .status(500)
@@ -91,10 +89,12 @@ http://localhost:8080/restaurant/orders/${orderID}
     let menu_item;
 
     db.query(`
-    SELECT menu_items.menu_item_name, menu_items.price, line_items.quantity
-    FROM menu_items
-    JOIN line_items ON menu_item_id = menu_items.id
-    JOIN orders ON order_id = orders.id
+    SELECT orders.id, orders.customer_phone, string_agg(CONCAT (line_items.quantity, ' ', menu_items.menu_item_name), ', ')
+
+    FROM line_items
+    JOIN orders ON orders.id = order_id
+    JOIN menu_items ON menu_items.id = line_items.menu_item_id
+    GROUP BY orders.id
     WHERE orders.id = $1;
     `, [req.params.orderID])
       .then(lineItemsData => {
