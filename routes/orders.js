@@ -65,8 +65,6 @@ http://localhost:8080/restaurant/orders/${orderID}
         res.redirect(`/orders/checkout/${orderID}`);
       })
 
-      //implement another .then function to call back the selected items and recalculate the total price plus tax???
-
       .catch(err => {
         res
           .status(500)
