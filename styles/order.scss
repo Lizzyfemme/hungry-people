@@ -26,14 +26,15 @@ article {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 70px;
       h2 {
         display: block;
         font-weight: bold;
         text-transform: uppercase;
+        margin: 0px;
       }
       h3 {
         display: block;
+        margin: 0px;
       }
     }
     .description_and_quantity {
@@ -49,6 +50,7 @@ article {
       }
       .quantity_field {
         display: flex;
+        justify-content: flex-end;
 
         label {
           display: block;
@@ -57,7 +59,7 @@ article {
         input {
           display: block;
           outline: none;
-          border: none;
+          width: 60px;
         }
       }
     }
