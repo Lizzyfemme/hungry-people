@@ -1,11 +1,10 @@
 <% layout('../layout.ejs') -%>
 
-<div id="app">
-  <h1>Incoming orders below!</h1>
-</div>
+<head>
+  <title>Incoming Orders</title>
+</head>
 
 <section id="bill">
-
   <table id="main_table">
     <thead>
       <th>Order Number</th>
@@ -14,42 +13,44 @@
       <th>Orders</th>
       <th colspan="2">Message Customer</th>
     </thead>
+    <% for (const lineItem of lineItems) { %>
     <tr>
-        <% for (const lineItem of lineItems) { %>
-      <td><%=id%></td>
+
+      <td><%= orders.id %></td>
       <td>5 minutes</td>
-      <td><%=customer_phone%></td>
+      <td><%= orders.customer_phone %></td>
       <td>
         <table class="order_table">
           <tr>
-            <td><%=quantity%></td>
-            <td><%=menu_item_name%></td>
+            <td><%= line_items.quantity %></td>
+            <td><%= menu_items.menu_item_name %></td>
           </tr>
+          <% } %>
+
         </table>
-        <% } %>
+
       </td>
       <td><button>message</button></td>
       <td><button>complete</button></td>
     </tr>
     <tr>
-        <td>88888</td>
-        <td>5 minutes</td>
-        <td>604-123-4567</td>
-        <td>
-          <table class="order_table">
-            <tr>
-              <td>1</td>
-              <td>Pepperoni </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Fungi</td>
-            </tr>
-          </table>
-        </td>
-        <td><button>message</button></td>
-        <td><button>complete</button></td>
-      </tr>
+      <td>88888</td>
+      <td>5 minutes</td>
+      <td>604-123-4567</td>
+      <td>
+        <table class="order_table">
+          <tr>
+            <td>1</td>
+            <td>Pepperoni </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Fungi</td>
+          </tr>
+        </table>
+      </td>
+      <td><button>message</button></td>
+      <td><button>complete</button></td>
+    </tr>
   </table>
-
 </section>
