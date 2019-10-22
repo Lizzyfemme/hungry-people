@@ -1,6 +1,8 @@
 $(() => {
   const $quantityInputs = $('.qty');
   const form = $('form');
+  $($(".cart")[0]).hide();
+
   $quantityInputs.change((el) => {
     updateTotal();
   });
@@ -44,6 +46,7 @@ const updateTotal = () => {
   const $subTotal = $('#sub-total');
   let subTotal = 0.00;
   const $quantityInputs = $('.qty');
+  const $cart = $($(".cart")[0]);
 
   $quantityInputs.each(function (index) {
     const qty = Number.parseInt(this.value) || 0;
@@ -52,6 +55,12 @@ const updateTotal = () => {
 
     subTotal += qty * price;
   });
+
+  if (subTotal === 0) {
+    $cart.slideUp();
+  } else {
+    $cart.slideDown();
+  }
 
   $subTotal.text(`$${subTotal.toFixed(2)}`);
 };
