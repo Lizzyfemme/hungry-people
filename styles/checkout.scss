@@ -4,6 +4,7 @@ $highlight-color:#122517;
   margin-top:50px;
   margin-left:2.5%;
   margin-right:2.5%;
+  font-size: 180%;
 }
 #bill {
   margin-left:2.5%;
@@ -12,4 +13,10 @@ $highlight-color:#122517;
 a{
   color:#122517;
   font-weight: bold;
+}
+
+.summary {
+  margin-top: 50px;
+  margin-left: 2.5%;
+  font-size: 150%;
 }
