@@ -45,8 +45,19 @@ body {
 .splash_image{
   display:block;
   object-fit: cover;
-  max-width: 250px;
-  max-height: 250px;
+  width: 20vw;
+  height: auto;
+}
+hr.lines {
+  border: 3px solid #122517;
+  margin-top: 2%;
+}
+
+.content {
+  padding: 3%;
+  font-family: 'Pacifio';
+  font-size: 200%;
+  color: #122517;
 }
 
 footer{
