@@ -7,7 +7,6 @@ module.exports = (db, twilioClient) => {
   //   res.render('restaurant/orders');
   // });
 
-<<<<<<< HEAD
   router.get("/orders/:orderID", (req, res) => {
     let order;
 
@@ -63,8 +62,9 @@ Your order has been received and will be ready in approximately ${prepTime} minu
       });
   });
 
-  return router;
-=======
+
+
+
 router.get("/employee", (req, res) => {
   db.query(`SELECT orders.id, orders.customer_phone, line_items.quantity, menu_items.menu_item_name
     FROM line_items
@@ -83,5 +83,5 @@ router.get("/employee", (req, res) => {
     });
 });
 return router;
->>>>>>> employee_orders
+
 };
