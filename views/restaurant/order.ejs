@@ -1,31 +1,54 @@
 <% layout('../layout.ejs') -%>
 
 <head>
-    <title>Current Order</title>
+  <title>Current Order</title>
 </head>
 
-<article class="order">
-  <header>
-    <h2><%= order.customer_phone %></h2>
-    <p>Ordered at: <%= order.ordered_at %></p>
-    <p>
-      Received at:
-      <% if (order.received_at) { %>
-        <%= order.received_at %>
-      <% } else { %>
-        <form action="/restaurant/orders/<%= order.id %>" method="post">
-          <label for="estimated-time">Estimated time:</label>
-          <input name="prep_time" type="number">
-          <input type="hidden" name="customer_phone" value="<%= order.customer_phone %>">
-          <input type="submit" value="Confirm">
-        </form>
-      <% } %>
-    </p>
-    <p>Completed at: <%= order.completed_at || "" %></p>
-    <ul class="line-items">
-      <% for (const lineItem of order.lineItems) { %>
-      <li><%= lineItem.quantity %>&times;<%= lineItem.menu_item_name %></li>
-      <% } %>
-    </ul>
-  </header>
+<article id="order">
+
+  <h2><%= order.customer_phone %></h2>
+  <table>
+    <tr>
+      <th width="20%">
+        Ordered at:
+      </th>
+      <td width="80%">
+        <p><%= order.ordered_at %></p>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        Received at:
+      </th>
+      <td>
+        <p>
+          <% if (order.received_at) { %>
+          <%= order.received_at %>
+          <% } else { %>
+          <form action="/restaurant/orders/<%= order.id %>" method="post">
+            <label for="estimated-time">Estimated time:</label>
+            <input name="prep_time" type="number">
+            <input type="hidden" name="customer_phone" value="<%= order.customer_phone %>">
+            <input type="submit" value="Confirm">
+          </form>
+          <% } %>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <th>
+      Completed at:
+      </th>
+      <td>
+        <p><%= order.completed_at || "" %></p>
+      </td>
+    </tr>
+  </table>
+ <h3>Order details</h3>
+  <ul>
+    <% for (const lineItem of order.lineItems) { %>
+    <li><%= lineItem.quantity %>&times;<%= lineItem.menu_item_name %></li>
+    <% } %>
+  </ul>
+
 </article>

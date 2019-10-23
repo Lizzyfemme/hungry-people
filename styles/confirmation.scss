@@ -1,0 +1,21 @@
+#order {
+  margin-top: 50px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  display: flex;
+  flex-direction: column;
+  th {
+    text-align: left;
+    text-transform: uppercase;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  h3 {
+    text-transform: uppercase;
+  }
+  ul{
+    margin:0;
+  }
+}
