@@ -29,11 +29,12 @@ const calcTimeRemaining = ($timer) => {
   const receivedAt = new Date($timer.data("received-at"));
   const dueAt = new Date(receivedAt.setMinutes(receivedAt.getMinutes() + $timer.data("prep-time")));
   const timeRemaining = dueAt - new Date();
-  const minutesRemaining = Math.floor(timeRemaining / 60000);
-  const secondsRemaining = Math.abs(Math.floor((timeRemaining % 60000) / 1000));
+  const negative = timeRemaining < 0;
+  const minutesRemaining = Math.floor(Math.abs(timeRemaining / 60000));
+  const secondsRemaining = Math.floor(Math.abs((timeRemaining % 60000) / 1000));
 
-  $timer.text(`${minutesRemaining}min, ${secondsRemaining}sec`);
-  if (timeRemaining < 0) {
+  $timer.text(`${negative ? "-" : ""}${minutesRemaining}min, ${secondsRemaining}sec`);
+  if (negative) {
     $timer.addClass("overdue");
   }
 };
