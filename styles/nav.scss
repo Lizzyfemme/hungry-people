@@ -39,6 +39,14 @@ nav {
   }
 }
 
+body .container {
+  padding-top: 70px;
+}
+
+body.home .container {
+  padding-top: 0px;
+}
+
 .home-button img {
   width: 89px;
   height: auto;
