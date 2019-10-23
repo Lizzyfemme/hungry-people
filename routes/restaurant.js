@@ -36,9 +36,9 @@ module.exports = (db, twilioClient) => {
 
     db.query(`
     UPDATE orders
-    SET received_at = $1
-    WHERE id = $2
-    `, [ receivedAt, req.params.orderID ])
+    SET received_at = $1, prep_time = $2
+    WHERE id = $3
+    `, [ receivedAt, prepTime, req.params.orderID ])
       .then(() => {
         return twilioClient.messages.create({
           to: customerPhone,
@@ -59,7 +59,7 @@ Your order has been received and will be ready in approximately ${prepTime} minu
   });
 
   router.get("/employee", (req, res) => {
-    db.query(`SELECT orders.id, orders.customer_phone, string_agg(CONCAT (line_items.quantity, ' ', menu_items.menu_item_name), ', ') AS pizza
+    db.query(`SELECT orders.id, orders.customer_phone, string_agg(CONCAT (line_items.quantity, ' &times; ', menu_items.menu_item_name), ', ') AS pizza, orders.prep_time, orders.received_at
   FROM line_items
   JOIN orders ON orders.id = order_id
   JOIN menu_items ON menu_items.id = line_items.menu_item_id

@@ -8,7 +8,7 @@
   <table id="main_table">
     <thead>
       <th>Order Number</th>
-      <th>Estimated Time</th>
+      <th>Time Remaining</th>
       <th>Phone Number</th>
       <th>Orders</th>
       <th colspan="2">Message Customer</th>
@@ -16,8 +16,12 @@
 
     <% for (const lineItem of lineItems) { %>
     <tr>
-
       <td><%= lineItem.id %></td>
+      <td>
+        <span class="timer" data-received-at="<%= lineItem.received_at %>" data-prep-time="<%= lineItem.prep_time %>">
+          <%= lineItem.prep_time || "--" %>
+        </span>
+      </td>
       <td><%= lineItem.customer_phone %></td>
       <td>
         <table class="order_table">

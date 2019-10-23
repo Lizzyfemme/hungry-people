@@ -67,6 +67,11 @@ hr.lines {
   padding:0;
 }
 
+.overdue {
+  font-weight: bold;
+  color: crimson;
+}
+
 footer{
   text-transform: uppercase;
   background-color: $highlight-color;

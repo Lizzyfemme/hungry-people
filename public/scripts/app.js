@@ -1,6 +1,7 @@
 $(() => {
   const $quantityInputs = $('.qty');
   const form = $('form.new-order');
+  const $timers = $('.timer');
   $($(".cart")[0]).hide();
 
   $quantityInputs.change((el) => {
@@ -14,11 +15,32 @@ $(() => {
     validatePhone(input);
     validateQty(qty);
   });
+
+  $timers.each(function () {
+    const $timer = $(this);
+
+    if ($timer.data("received-at")) {
+      window.setInterval(calcTimeRemaining, 1000, $timer);
+    }
+  });
 });
+
+const calcTimeRemaining = ($timer) => {
+  const receivedAt = new Date($timer.data("received-at"));
+  const dueAt = new Date(receivedAt.setMinutes(receivedAt.getMinutes() + $timer.data("prep-time")));
+  const timeRemaining = dueAt - new Date();
+  const minutesRemaining = Math.floor(timeRemaining / 60000);
+  const secondsRemaining = Math.abs(Math.floor((timeRemaining % 60000) / 1000));
+
+  $timer.text(`${minutesRemaining}min, ${secondsRemaining}sec`);
+  if (timeRemaining < 0) {
+    $timer.addClass("overdue");
+  }
+};
 
 const validatePhone = (input) => {
   if (input === "") {
-    event.preventDefault()
+    event.preventDefault();
     const exisitingError = $('.error-message').text();
     $('.error-message').html(`${exisitingError} <br> You forgot to let us know your phone number.`);
     $(".hiddenError").removeClass("error");
