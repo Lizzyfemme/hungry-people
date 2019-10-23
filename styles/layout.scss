@@ -5,30 +5,18 @@ $accent-color:#000000;
 $highlight-color:#122517;
 $hover-color:#DCDBD2;
 $main-font: Montserrat;
-$accent-font: Pacifico;
+
 
 
 body {
   background-color:$bg-color;
   font-family: $main-font;
+  color: $highlight-color;
 
   h1 {
     color:$highlight-color;
   }
 }
-// #logo{
-//   display:block;
-//   margin-left: 2.5%;
-//   margin-right:2.5%;
-//   margin-top:20px;
-//   padding-top: 20px;
-//   padding-bottom: 25px;
-//   background: $highlight-color;
-//   font-family: $accent-font;
-//   color: $bg-color;
-//   text-align: center;
-//   font-size: 80px;
-// }
 
 #video{
   background-color: $accent-color;
@@ -55,8 +43,8 @@ video {
 #image_container{
   display: flex;
   justify-content: space-between;
-  margin-left:2.5%;
-  margin-right:2.5%;
+  margin-left:2.5vw;
+  margin-right:2.5vw;
   margin-top:35px;
 }
 
@@ -68,14 +56,15 @@ video {
 }
 hr.lines {
   border: 3px solid #122517;
-  margin-top: 2%;
+
+
 }
 
 .content {
-  padding: 3%;
-  font-family: 'Pacifio';
-  font-size: 200%;
-  color: #122517;
+  width: 45vw;
+  margin-left:auto;
+  margin-right: auto;
+  padding:0;
 }
 
 footer{
