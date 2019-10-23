@@ -36,9 +36,9 @@ module.exports = (db, twilioClient) => {
 
     db.query(`
     UPDATE orders
-    SET received_at = $1
-    WHERE id = $2
-    `, [ receivedAt, req.params.orderID ])
+    SET received_at = $1, prep_time = $2
+    WHERE id = $3
+    `, [ receivedAt, prepTime, req.params.orderID ])
       .then(() => {
         return twilioClient.messages.create({
           to: customerPhone,
