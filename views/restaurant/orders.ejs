@@ -1,11 +1,13 @@
 <% layout('../layout.ejs') -%>
 
+
 <head>
+  <script type="text/javascript" src="/scripts/app.js"></script>
   <title>Incoming Orders</title>
 </head>
 
 <section id="bill">
-  <table id="main_table">
+  <table class="main_table">
     <thead>
       <th>Order Number</th>
       <th>Estimated Time</th>
@@ -16,17 +18,9 @@
 
     <% for (const lineItem of lineItems) { %>
     <tr>
-
       <td><%= lineItem.id %></td>
       <td><%= lineItem.customer_phone %></td>
-      <td>
-        <table class="order_table">
-          <tr>
-            <td><%= lineItem.pizza %></td>
-          </tr>
-
-        </table>
-      </td>
+      <td><%= lineItem.pizza %></td>
       <td><button>message</button></td>
       <td>
         <% if (lineItem.completed_at) { %>

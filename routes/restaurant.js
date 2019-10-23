@@ -64,7 +64,8 @@ Your order has been received and will be ready in approximately ${prepTime} minu
   JOIN orders ON orders.id = order_id
   JOIN menu_items ON menu_items.id = line_items.menu_item_id
   WHERE orders.completed_at IS NULL
-  GROUP BY orders.id;
+  GROUP BY orders.id
+  ORDER BY orders.ordered_at DESC;
     `)
       .then(data => {
         const lineItems = data.rows;
