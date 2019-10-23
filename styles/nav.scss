@@ -27,10 +27,11 @@ nav {
     padding-right:2.5%;
     &:hover{
       background-color:transparent;
-      border:1px solid $bg-color;
+      border: none;
     }
     &:active{
-      background-color:$bg-color;
+      background-color: transparent;
+      border: none;
     }
     a{
       color:inherit;
