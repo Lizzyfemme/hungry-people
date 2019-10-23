@@ -1,4 +1,4 @@
-$bg-color:#FFFFFF;
+$bg-color:rgba(255, 255, 255, 0.5);
 $accent-color:#000000;
 $highlight-color:#122517;
 $main-font: Montserrat;
@@ -19,14 +19,16 @@ nav {
 
   button {
     outline:none;
-    border-color:#FFFFFF;
+    border:none;
+    background-color:transparent;
     height:5vh;
     text-transform: uppercase;
     font-weight: bolder;
     padding-left:2.5%;
     padding-right:2.5%;
     &:hover{
-      background-color:$bg-color;
+      background-color:transparent;
+      border:1px solid $bg-color;
     }
     &:active{
       background-color:$bg-color;
