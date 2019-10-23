@@ -78,6 +78,11 @@ hr.lines {
   color: #122517;
 }
 
+.overdue {
+  font-weight: bold;
+  color: crimson;
+}
+
 footer{
   text-transform: uppercase;
   background-color: $highlight-color;
