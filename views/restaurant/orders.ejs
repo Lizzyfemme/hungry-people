@@ -30,9 +30,13 @@
       </td>
       <td><button>message</button></td>
       <td>
+        <% if (lineItem.completed_at) { %>
+        <span>Already done!</span>
+        <% } else { %>
         <form action="/restaurant/orders/<%= lineItem.id %>/complete" method="post">
           <input type="submit" value="Complete">
         </form>
+        <% } %>
       </td>
     </tr>
     <% } %>
