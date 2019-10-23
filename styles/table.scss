@@ -7,6 +7,7 @@ $hover-color: #dcdbd2;
   margin-right: 2.5%;
   display: table;
   width: 100%;
+  z-index: 0;
   thead {
     text-transform: uppercase;
     background-color: $bg-color;

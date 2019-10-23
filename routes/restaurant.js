@@ -29,6 +29,27 @@ module.exports = (db, twilioClient) => {
       });
   });
 
+  router.post("/orders/message", (req, res) => {
+    console.log("hello");
+    console.log(req.body);
+    const customer = req.body['customer_phone'];
+    const message = req.body.msg;
+    console.log(Object.keys(req.body));
+    return twilioClient.messages.create({
+      to: customer,
+      from: '+17609708429',
+      body: `${message}`
+    })
+    .then(() => {
+      res.redirect("/restaurant/employee");
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+  });
+
   router.post("/orders/:orderID", (req, res) => {
     const receivedAt = new Date();
     const customerPhone = req.body.customer_phone;
@@ -68,7 +89,6 @@ Your order has been received and will be ready in approximately ${prepTime} minu
     `)
       .then(data => {
         const lineItems = data.rows;
-        console.log(lineItems);
         res.render('restaurant/orders', { lineItems:lineItems });
       })
       .catch(err => {
@@ -105,6 +125,7 @@ Your order is ready! Come get it while it's hot!
           .json({ error: err.message });
       });
   });
+
 
   return router;
 };

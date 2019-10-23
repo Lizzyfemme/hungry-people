@@ -20,7 +20,7 @@
           <%= lineItem.prep_time || "--" %>
         </span>
       </td>
-      <td><%= lineItem.customer_phone %></td>
+      <td class="customer_phone"><%= lineItem.customer_phone %></td>
       <td>
         <table class="order_table">
           <tr>
@@ -29,7 +29,9 @@
 
         </table>
       </td>
-      <td><button>message</button></td>
+      <td>
+        <button class="message-btn">message</button>
+      </td>
       <td>
         <% if (lineItem.completed_at) { %>
         <span>Already done!</span>
@@ -43,4 +45,33 @@
     <% } %>
 
   </table>
+
+  <div class="dim"></div>
+
+  <div class="modal" data-dismiss="modal">
+
+    <button class="close">
+        <i class="fas fa-times"></i>
+    </button>
+
+    <h5>Message Box</h5>
+
+    <form action="/restaurant/orders/message" method="POST" id="msgForm">
+      <input type="hidden" name="customer_phone" id="customer_phone">
+      <div class="body">
+        <textarea name="msg" type="text" form="msgForm"></textarea>
+      </div>
+
+      <div>
+        <button type="submit" class="send" value="Send">
+          send
+        </button>
+        <button class="cancel" data-dismiss="modal">
+            Cancel
+        </button>
+      </div>
+    </form>
+
+  </div>
+
 </section>
