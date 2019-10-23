@@ -59,11 +59,11 @@ Your order has been received and will be ready in approximately ${prepTime} minu
   });
 
   router.get("/employee", (req, res) => {
-    db.query(`SELECT orders.id, orders.customer_phone, string_agg(CONCAT (line_items.quantity, ' ', menu_items.menu_item_name), ', ') AS pizza, orders.completed_at
-
+    db.query(`SELECT orders.id, orders.customer_phone, string_agg(CONCAT (line_items.quantity, ' ', menu_items.menu_item_name), ', ') AS pizza
   FROM line_items
   JOIN orders ON orders.id = order_id
   JOIN menu_items ON menu_items.id = line_items.menu_item_id
+  WHERE orders.completed_at IS NULL
   GROUP BY orders.id;
     `)
       .then(data => {
