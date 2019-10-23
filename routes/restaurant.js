@@ -58,28 +58,53 @@ Your order has been received and will be ready in approximately ${prepTime} minu
       });
   });
 
-
-
-
-router.get("/employee", (req, res) => {
-  db.query(`SELECT orders.id, orders.customer_phone, string_agg(CONCAT (line_items.quantity, ' ', menu_items.menu_item_name), ', ') AS pizza
+  router.get("/employee", (req, res) => {
+    db.query(`SELECT orders.id, orders.customer_phone, string_agg(CONCAT (line_items.quantity, ' ', menu_items.menu_item_name), ', ') AS pizza
 
   FROM line_items
   JOIN orders ON orders.id = order_id
   JOIN menu_items ON menu_items.id = line_items.menu_item_id
   GROUP BY orders.id;
     `)
-    .then(data => {
-      const lineItems = data.rows;
-      console.log(lineItems)
-      res.render('restaurant/orders', { lineItems:lineItems });
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
-    });
-});
-return router;
+      .then(data => {
+        const lineItems = data.rows;
+        console.log(lineItems);
+        res.render('restaurant/orders', { lineItems:lineItems });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
 
+  router.post("/orders/:orderID/complete", (req, res) => {
+    const orderID = req.params.orderID;
+    const completedAt = new Date();
+
+    db.query(`
+UPDATE orders SET completed_at = $1 WHERE id = $2 RETURNING *;
+    `, [completedAt, orderID])
+      .then(orderData => {
+        const order = orderData.rows[0];
+
+        return twilioClient.messages.create({
+          to: order.customer_phone,
+          from: '+17609708429',
+          body: `
+Your order is ready! Come get it while it's hot!
+`
+        });
+      })
+      .then(() => {
+        res.redirect("/restaurant/employee");
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
+  return router;
 };
