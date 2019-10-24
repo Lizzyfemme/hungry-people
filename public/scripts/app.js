@@ -111,8 +111,8 @@ const updateTotal = () => {
 
   $quantityInputs.each(function (index) {
     const qty = Number.parseInt(this.value) || 0;
-    const menuItemEl = $(this).parentsUntil("article").parent()[0];
-    const menuItemName = $(menuItemEl).find(".menu_item_name").text();
+    const menuItemEl = $(this).parentsUntil(".menu-item").parent()[0];
+    const menuItemName = $(menuItemEl).find(".name").text();
     const price = $(menuItemEl).find(".menu_item_price")[0].value.slice(1);
 
     if (qty > 0) {

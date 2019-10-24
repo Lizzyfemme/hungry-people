@@ -2,6 +2,7 @@ $highlight-color: #122517;
 $hover-color: #dcdbd2;
 $active-color: #99957a;
 $bg-color:#FFFFFF;
+
 html{
   overflow:hidden;
   margin:0;
@@ -14,91 +15,49 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-article {
-  height: 250px;
-  margin-bottom: 2.5%;
+.quantity_field {
   display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 5em;
 
-  img {
-    object-fit: cover;
-    max-width: 250px;
-    max-height: 250px;
+  label {
+    display: block;
     margin-right: 2.5%;
+    padding-bottom: 5px;
   }
-  .words {
-    width: 100%;
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      h2 {
-        display: block;
-        font-weight: bold;
-        text-transform: uppercase;
-        margin: 0px;
-      }
-      h3 {
-        display: block;
-        margin: 0px;
-      }
-    }
-    .description_and_quantity {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 180px;
-
-      p {
-        font-size: 18px;
-        display: block;
-        text-transform: capitalize;
-      }
-      .quantity_field {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-end;
-
-        label {
-          display: block;
-          margin-right: 2.5%;
-          padding-bottom: 5px;
-        }
-        input {
-          display: block;
-          border-top: 1px solid $highlight-color;
-          border-bottom: 1px solid $highlight-color;
-          outline: none;
-          width: 40px;
-          height: 30px;
-          text-align: center;
-        }
-        button {
-          background-color: white;
-          color: $highlight-color;
-          padding-right: 5px;
-          padding-left: 5px;
-          border: 1px solid $highlight-color;
-          border-right: none;
-          border-radius: 7px;
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-          width: 30px;
-          height: 30px;
-          &:last-child {
-            border-right: 1px solid $highlight-color;
-            border-left: none;
-            border-radius: 7px;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-        }
-      }
+  input {
+    display: block;
+    border-top: 1px solid $highlight-color;
+    border-bottom: 1px solid $highlight-color;
+    outline: none;
+    width: 40px;
+    height: 30px;
+    text-align: center;
+  }
+  button {
+    background-color: white;
+    color: $highlight-color;
+    padding-right: 5px;
+    padding-left: 5px;
+    border: 1px solid $highlight-color;
+    border-right: none;
+    border-radius: 7px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 30px;
+    height: 30px;
+    &:last-child {
+      border-right: 1px solid $highlight-color;
+      border-left: none;
+      border-radius: 7px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
   }
 }
 
-body{
+body {
   margin:0;
   height:100vh;
   perspective:1px;
@@ -107,13 +66,11 @@ body{
   overflow-y:auto;
 }
 
-.parrallax-wrapper{
+.parallax-wrapper {
   width: 100vw;
   height:100vh;
   padding-top:20vh;
   box-sizing: border-box;
-  transform-style: preserve-3d;
-  background-size: cover;
   &::before {
     content:"";
     width: 100vw;
@@ -125,9 +82,10 @@ body{
     position:absolute;
     z-index: -1;
     transform:translateZ(-1px) scale(2);
+  }
 }
 
-.regular_wrapper{
+.regular_wrapper {
   width:100vw;
   height:100vh;
   padding-top:20vh;
@@ -138,20 +96,26 @@ body{
   z-index: 2;
   position: relative;
 }
-  .floating_words{
-    margin:0 auto;
-    padding:20px;
-    width:50vw;
-    background-color: $bg-color;
-    position: relative;
-    header{
-      display:flex;
-      justify-content:space-between;
-      font-size: 10px;
-      text-transform: uppercase;
-    }
 
+.floating_words{
+  margin:0 auto;
+  padding:20px;
+  width:50vw;
+  background-color: $bg-color;
+  position: relative;
+  .menu-item {display: block;}
+  header{
+    display:flex;
+    justify-content:space-between;
+    font-size: 10px;
+    text-transform: uppercase;
   }
+  p {
+    float: left;
+    width: 70%;
+    margin-top: 0px;
+  }
+}
 
 section {
   display: flex;
@@ -185,6 +149,8 @@ button {
 
 .cart {
   display: block;
+  transform: none;
+  z-index: 20;
   background-color: $highlight-color;
   color: $active-color;
   width: 960px;
