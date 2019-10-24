@@ -138,13 +138,20 @@ body{
   z-index: 2;
   position: relative;
 }
+  .floating_words{
+    margin:0 auto;
+    padding:20px;
+    width:50vw;
+    background-color: $bg-color;
+    position: relative;
+    header{
+      display:flex;
+      justify-content:space-between;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
 
-.floating_words{
-  margin:0 auto;
-  padding:50px;
-  width:50vw;
-  background-color: $bg-color;
-}
+  }
 
 section {
   display: flex;

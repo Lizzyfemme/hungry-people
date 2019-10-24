@@ -2,100 +2,56 @@
 
 <% block('title', 'Menu') -%>
 
+<form action="/orders" method="post" class="new-order">
 
+  <div class="parrallax-wrapper">
 
-<div class="parrallax-wrapper">
+    <div class="floating_words">
 
-  <div class="floating_words">
-    <h2>Place your order</h2>
-    <p>
-      Adjust the quantities of the pizzas you want to order, enter your phone
-      number, and place your order. Easy as (pizza) pie!
-    </p>
-    <p>Lorem ipsum dolor amet jianbing neutra pork belly, lo-fi vegan poutine gentrify chicharrones. Drinking vinegar
-      cold-pressed cred photo booth listicle copper mug. Raw denim direct trade live-edge offal vape. Marfa kitsch
-      taiyaki hexagon vape slow-carb taxidermy. Knausgaard letterpress readymade vape cold-pressed cred DIY succulents
-      kogi YOLO pour-over health goth whatever activated charcoal. DIY flexitarian pitchfork pug ethical, narwhal
-      butcher 90's distillery hammock kogi readymade dreamcatcher kale chips.</p>
+      <% for (const menuItem of menuItems) { %>
+      <%if (menuItem.item_type_id === 1){ %>
+      <header>
+        <h1><%= menuItem.menu_item_name %></h1>
+        <h2><%= menuItem.price %></h2>
+      </header>
+      <p><%= menuItem.description %></p>
+      <input type="hidden" class="menu_item_id" name="menu_item_id" value="<%= menuItem.id %>">
+      <input type="hidden" class="menu_item_price" name="menu_item_price" value="<%= menuItem.price %>">
+      <div class="quantity_field">
+        <label for="quantity">Quantity</label>
+        <input type="number" step="1" min="0" max="" name="menu_item_quantity" value="0" title="Qty"
+          class="input-text qty text" size="4" pattern="" inputmode="">
+
+      </div>
+      <% } %>
+      <% } %>
+    </div>
+
   </div>
-</div>
-<div class="regular_wrapper">
-  <div class="floating_words">
-    <h2>Place your order</h2>
-    <p>
-      Adjust the quantities of the pizzas you want to order, enter your phone
-      number, and place your order. Easy as (pizza) pie!
-    </p>
-    <p>Lorem ipsum dolor amet jianbing neutra pork belly, lo-fi vegan poutine gentrify chicharrones. Drinking vinegar
-      cold-pressed cred photo booth listicle copper mug. Raw denim direct trade live-edge offal vape. Marfa kitsch
-      taiyaki hexagon vape slow-carb taxidermy. Knausgaard letterpress readymade vape cold-pressed cred DIY succulents
-      kogi YOLO pour-over health goth whatever activated charcoal. DIY flexitarian pitchfork pug ethical, narwhal
-      butcher 90's distillery hammock kogi readymade dreamcatcher kale chips.</p>
-  </div>
-</div>
+    <div class="regular_wrapper">
 
+      <div class="floating_words">
 
+        <% for (const menuItem of menuItems) { %>
+        <%if (menuItem.item_type_id === 2){ %>
+        <header>
+          <h1><%= menuItem.menu_item_name %></h1>
+          <h2><%= menuItem.price %></h2>
+        </header>
+        <p><%= menuItem.description %></p>
+        <input type="hidden" class="menu_item_id" name="menu_item_id" value="<%= menuItem.id %>">
+        <input type="hidden" class="menu_item_price" name="menu_item_price" value="<%= menuItem.price %>">
+        <div class="quantity_field">
+          <label for="quantity">Quantity</label>
+          <input type="number" step="1" min="0" max="" name="menu_item_quantity" value="0" title="Qty"
+            class="input-text qty text" size="4" pattern="" inputmode="">
+          <% } %>
+          <% } %>
 
-<!-- <form action="/orders" method="post" class="new-order">
-      <% for (const menuItem of menuItems) {
-      if (menuItem.item_type_id === 1){ %> -->
-<!--
-      <article>
-<div class="floating_words">
-        <div class="words">
-          <header class="menu">
-            <h2 class="menu_item_name"><%= menuItem.menu_item_name %></h2>
-            <h3 class="price"><%= menuItem.price %></h3>
-          </header>
-          <div class="description_and_quantity">
-            <p class="description"><%= menuItem.description %></p>
-            <input type="hidden" class="menu_item_id" name="menu_item_id" value="<%= menuItem.id %>">
-            <input type="hidden" class="menu_item_price" name="menu_item_price" value="<%= menuItem.price %>">
-            <div class="quantity_field">
-              <label for="quantity">Quantity</label>
-              <input type="number" step="1" min="0" max="" name="menu_item_quantity" value="0" title="Qty"
-                class="input-text qty text" size="4" pattern="" inputmode="">
-            </div>
-          </div>
         </div>
-
-      </article>
-      <% }} %>
-      <% for (const menuItem of menuItems) {
-      if (menuItem.item_type_id === 2){ %>
-      <article>
-        <img src="<%= menuItem.photo_url %>"></img>
-        <div class="words">
-          <header class="menu">
-            <h2 class="menu_item_name"><%= menuItem.menu_item_name %></h2>
-            <h3 class="price"><%= menuItem.price %></h3>
-          </header>
-          <div class="description_and_quantity">
-            <p class="description"><%= menuItem.description %></p>
-            <input type="hidden" class="menu_item_id" name="menu_item_id" value="<%= menuItem.id %>">
-            <input type="hidden" class="menu_item_price" name="menu_item_price" value="<%= menuItem.price %>">
-            <div class="quantity_field">
-              <label for="quantity">Quantity</label>
-              <input type="number" step="1" min="0" max="" name="menu_item_quantity" value="0" title="Qty"
-                class="input-text qty text" size="4" pattern="" inputmode="">
-            </div>
-          </div>
-        </div>
-
-      </article>
-      <% }} %>
+      </div>
   </div>
-  <br> -->
-
-
-
-
-
-
-
-
-<!--
-
+  <br>
   <section class="cart">
     <div class="hiddenError error">
       <span class="error-message">
@@ -110,4 +66,5 @@
     </div>
   </section>
 
-  </form> -->
+
+</form>

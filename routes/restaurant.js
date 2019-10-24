@@ -90,6 +90,7 @@ Your order has been received and will be ready in approximately ${prepTime} minu
     `)
       .then(data => {
         const lineItems = data.rows;
+        console.log(lineItems)
         res.render('restaurant/orders', { lineItems:lineItems });
       })
       .catch(err => {
