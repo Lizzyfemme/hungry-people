@@ -168,15 +168,11 @@ button {
 .cart {
   position: sticky;
   z-index: 3;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: flex-start;
   background-color: $highlight-color;
   color: $active-color;
-  width: 960px;
-  margin-right: auto;
-  margin-left: auto;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  padding: 10px;
+  padding: 10px 90px;
   right: 0;
   bottom: 0;
   left: 0;
