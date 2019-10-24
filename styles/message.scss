@@ -1,0 +1,82 @@
+.modal {
+  position: fixed;
+  z-index: 7;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  top: 250px;
+  background-color: white;
+  border-radius: 20px;
+  display: none;
+}
+
+.dim {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 6;
+  display: none;
+}
+
+.close {
+  float: right;
+  border: none;
+  &:hover {
+    background: transparent;
+    animation: bounce 1.0s;
+    animation-direction: inherit;
+    animation-iteration-count: infinite
+  }
+}
+
+.cancel {
+  margin-top: 5px;
+  margin-right: 10px;
+  border-radius: 8px;
+  color: white;
+  background-color: grey;
+  float: right;
+  border: none;
+  &:hover {
+    background: lightcoral;
+    animation: bounce 1.0s;
+    animation-direction: inherit;
+    animation-iteration-count: infinite
+  }
+}
+
+.send {
+  margin-top: 5px;
+  border-radius: 8px;
+  color: white;
+  background-color: rgb(68, 166, 223);
+  float: right;
+  &:hover {
+    background: lightcyan;
+    animation: bounce 1.0s;
+    animation-direction: inherit;
+    animation-iteration-count: infinite
+  }
+}
+
+textarea {
+  border-bottom: 2px solid #5E6572 ;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  resize: none;
+  background-color: white;
+  width: 500px;
+  height: 50px;
+  font-weight: 600;
+}
+
+@keyframes bounce {
+  10% {margin-top: 0px; color: rgba(0, 255, 21, 0.829);}
+  50% {margin-top: 10px; color: rgba(255, 60, 0, 0.829);}
+  100% {margin-top: 0px; color: rgba(0, 153, 255, 0.829);}
+}

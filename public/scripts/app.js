@@ -23,6 +23,24 @@ $(() => {
       window.setInterval(calcTimeRemaining, 1000, $timer);
     }
   });
+  $('.message-btn').click(function() {
+    const customerPhone = $($(this).parent().parent().children(".customer_phone"))[0].innerHTML;
+    $(".modal").slideDown("fast");
+    $(".dim").slideDown("fast");
+    $("#customer_phone").val(customerPhone);
+  });
+
+  $('.close').click(() => {
+    $(".modal").slideUp("fast");
+    $(".dim").slideUp("fast");
+  });
+
+  $('.cancel').click((event) => {
+    event.preventDefault();
+    $(".modal").slideUp("fast");
+    $(".dim").slideUp("fast");
+  });
+
 });
 
 const calcTimeRemaining = ($timer) => {
