@@ -117,7 +117,7 @@ button {
     float: right;
   }
   .inputs {
-    clear: both;
+    clear: right;
     float: right;
     label { margin-right: 10px; }
     input[type=text] {
@@ -135,6 +135,11 @@ button {
     }
   }
   #sub-total { font-weight: bold; }
+}
+
+.cart ul {
+  float: left;
+  margin-left: 20px;
 }
 
 .smallLogo {
