@@ -9,8 +9,6 @@ VALUES
 
 ('Carbonara', 'Pecorino, Pancetta, Farm Egg, Bianco', 'https://marinatakeaway.com/wp-content/uploads/2019/01/shutterstock_392146984.jpg?v=06e415f918c5', 19.00, 1),
 
-('Pineapple & Ham', 'House-Smoked Ham, Roasted Pineapple, Confit Garlic, Rosemary, manchego, bianco','https://foodscene.deliveroo.co.uk/assets/images/blogs/foodscene.deliveroo.co.uk/en/cuisine-inspiration/1xuae1hVL1cPIJEb9JCelzL0j9CppWTtueuSBx6pbFrg/h_16_classic_ham_and_pineapple.jpg?v=1.01', 19.00, 1),
-
 ('Artichoke & Olive', 'Fior di Latte, Kalamata Olives, Artichokes, Garlic Confit, Basil, Marinara', ' https://mediad.publicbroadcasting.net/p/shared/npr/styles/x_large/nprshared/201805/474250506.jpg', 17.00, 2),
 
 ('Quattro Formaggio', 'Taleggio, Fresh Ricotta, Mozzarella, Parmigiano, Marinara', 'https://www.lucianopignataro.it/wp-content/uploads/2019/06/Pizza-Quattro-formaggi.jpg', 18.00, 2),

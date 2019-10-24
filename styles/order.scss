@@ -50,82 +50,18 @@ background-size: cover;
 }
   .floating_words{
     margin:0 auto;
-    padding:50px;
+    padding:20px;
     width:50vw;
     background-color: $bg-color;
+    position: relative;
+    header{
+      display:flex;
+      justify-content:space-between;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
 
   }
-
-
-// #menu_container {
-//   color: $highlight-color;
-
-//   .floating_words{
-//     width:50vw;
-//     background-color:$bg-color;
-//     z-index: 2;
-//     position:absolute;
-
-//   }
-// }
-
-// article {
-//   height: 250px;
-//   margin-bottom: 2.5%;
-//   display: flex;
-
-//   img {
-//     object-fit: cover;
-//     max-width: 250px;
-//     max-height: 250px;
-//     margin-right: 2.5%;
-//   }
-//   .words {
-//     width: 100%;
-
-//     header {
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: center;
-//       h2 {
-//         display: block;
-//         font-weight: bold;
-//         text-transform: uppercase;
-//         margin: 0px;
-//       }
-//       h3 {
-//         display: block;
-//         margin: 0px;
-//       }
-//     }
-//     .description_and_quantity {
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: space-between;
-//       height: 180px;
-
-//       p {
-//         font-size: 18px;
-//         display: block;
-//         text-transform: capitalize;
-//       }
-//       .quantity_field {
-//         display: flex;
-//         justify-content: flex-end;
-
-//         label {
-//           display: block;
-//           margin-right: 2.5%;
-//         }
-//         input {
-//           display: block;
-//           outline: none;
-//           width: 60px;
-//         }
-//       }
-//     }
-//   }
-// }
 
 section {
   display: flex;
