@@ -9,6 +9,7 @@
     Adjust the quantities of the pizzas you want to order, enter your phone
     number, and place your order. Easy as (pizza) pie!
   </p>
+
   <form action="/orders" method="post" class="new-order">
     <% for (const menuItem of menuItems) { %>
     <article>
@@ -24,14 +25,15 @@
           <input type="hidden" class="menu_item_price" name="menu_item_price" value="<%= menuItem.price %>">
           <div class="quantity_field">
             <label for="quantity">Quantity</label>
-            <input type="number" step="1" min="0" max="" name="menu_item_quantity" value="0" title="Qty"
-              class="input-text qty text" size="4" pattern="" inputmode="">
+
+            <button name="increment" value="<%= menuItem.id %>">&plus;</button>
+            <input type="number" min="0" name="menu_item_quantity" value="0" class="input-text qty text">
+            <button name="decrement" value="<%= menuItem.id %>">&minus;</button>
           </div>
         </div>
       </div>
     </article>
     <% } %>
-
 
     <br>
 
