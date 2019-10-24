@@ -23,6 +23,7 @@ $(() => {
       window.setInterval(calcTimeRemaining, 1000, $timer);
     }
   });
+
   $('.message-btn').click(function() {
     const customerPhone = $($(this).parent().parent().children(".customer_phone"))[0].innerHTML;
     $(".modal").slideDown("fast");
@@ -88,11 +89,18 @@ const updateTotal = () => {
   let subTotal = 0.00;
   const $quantityInputs = $('.qty');
   const $cart = $($(".cart")[0]);
+  const $itemsUL = $(".items");
+  $itemsUL.html("");
 
   $quantityInputs.each(function (index) {
     const qty = Number.parseInt(this.value) || 0;
     const menuItemEl = $(this).parentsUntil("article").parent()[0];
+    const menuItemName = $(menuItemEl).find(".menu_item_name").text();
     const price = $(menuItemEl).find(".menu_item_price")[0].value.slice(1);
+
+    if (qty > 0) {
+      $itemsUL.append($(`<li>${qty} &times; ${menuItemName}</li>`));
+    }
 
     subTotal += qty * price;
   });
