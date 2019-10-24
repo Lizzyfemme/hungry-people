@@ -2,6 +2,9 @@ $(() => {
   const $quantityInputs = $('.qty');
   const form = $('form.new-order');
   const $timers = $('.timer');
+  const $incrementButtons = $("button[name=increment]");
+  const $decrementButtons = $("button[name=decrement]");
+
   $($(".cart")[0]).hide();
 
   $quantityInputs.change((el) => {
@@ -42,6 +45,21 @@ $(() => {
     $(".dim").slideUp("fast");
   });
 
+  $incrementButtons.click(function (event) {
+    event.preventDefault();
+    const $qtyInput = $($(this).siblings("input")[0]);
+    $qtyInput.val(Number($qtyInput.val()) + 1);
+    updateTotal();
+  });
+
+  $decrementButtons.click(function (event) {
+    event.preventDefault();
+    const $qtyInput = $($(this).siblings("input")[0]);
+    if ($qtyInput.val() > 0) {
+      $qtyInput.val(Number($qtyInput.val()) - 1);
+    }
+    updateTotal();
+  });
 });
 
 const calcTimeRemaining = ($timer) => {
@@ -70,7 +88,6 @@ const validatePhone = (input) => {
 
 const validateQty = (qty) => {
   let totalPizza = 0;
-  console.log(qty);
   for (let i = 0; i < qty.length; i++) {
     const quantity = Number.parseInt($(qty[i]).val()) || 0;
       totalPizza += quantity;
