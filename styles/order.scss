@@ -1,11 +1,11 @@
 $highlight-color: #122517;
 $hover-color: #dcdbd2;
 $active-color: #99957a;
-
-#menu_container {
-  margin: 0 auto 10em auto;
-  width: 960px;
-  color: $highlight-color;
+$bg-color:#FFFFFF;
+html{
+  overflow:hidden;
+  margin:0;
+  padding:0;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -96,6 +96,54 @@ article {
       }
     }
   }
+}
+
+body{
+  margin:0;
+  height:100vh;
+  perspective:1px;
+  transform-style: preserve-3d;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
+.parrallax-wrapper{
+  width: 100vw;
+  height:100vh;
+  padding-top:20vh;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  background-size: cover;
+  &::before {
+    content:"";
+    width: 100vw;
+    height:100vh;
+    top:0;
+    left:0;
+    background-image: url('https://i.ytimg.com/vi/gswYPT1vg84/maxresdefault.jpg');
+    background-repeat: no-repeat;
+    position:absolute;
+    z-index: -1;
+    transform:translateZ(-1px) scale(2);
+}
+
+.regular_wrapper{
+  width:100vw;
+  height:100vh;
+  padding-top:20vh;
+  top:0;
+  left:0;
+  background-image: url('https://mediad.publicbroadcasting.net/p/shared/npr/styles/x_large/nprshared/201805/474250506.jpg');
+  background-repeat: no-repeat;
+  z-index: 2;
+  position: relative;
+}
+
+.floating_words{
+  margin:0 auto;
+  padding:50px;
+  width:50vw;
+  background-color: $bg-color;
 }
 
 section {
