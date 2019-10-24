@@ -69,16 +69,19 @@ body {
 .parallax-wrapper {
   width: 100vw;
   height:100vh;
-  padding-top:20vh;
+  padding-top:10vh;
   box-sizing: border-box;
   &::before {
     content:"";
     width: 100vw;
     height:100vh;
+    margin-top:-60px;
+    margin-bottom: 0px;
     top:0;
     left:0;
     background-image: url('https://i.ytimg.com/vi/gswYPT1vg84/maxresdefault.jpg');
     background-repeat: no-repeat;
+    background-size:cover;
     position:absolute;
     z-index: -1;
     transform:translateZ(-1px) scale(2);
@@ -87,19 +90,22 @@ body {
 
 .regular_wrapper {
   width:100vw;
-  height:100vh;
+  height:115vh;
   padding-top:20vh;
   top:0;
   left:0;
+  bottom:0;
+  margin-top:-100px;
   background-image: url('https://mediad.publicbroadcasting.net/p/shared/npr/styles/x_large/nprshared/201805/474250506.jpg');
   background-repeat: no-repeat;
+  background-size:cover;
   z-index: 2;
   position: relative;
 }
 
 .floating_words{
   margin:0 auto;
-  padding:20px;
+  padding:10px;
   width:50vw;
   background-color: $bg-color;
   position: relative;
