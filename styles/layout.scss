@@ -77,6 +77,10 @@ footer{
   background-color: $highlight-color;
   text-align: center;
   color:$bg-color;
-  padding-top:7vh;
-  padding-bottom:7vh;
+  height: 14vh;
+}
+
+footer span {
+  display: block;
+  padding-top: 7vh;
 }
