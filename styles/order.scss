@@ -8,6 +8,12 @@ $active-color: #99957a;
   color: $highlight-color;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 article {
   height: 250px;
   margin-bottom: 2.5%;
@@ -50,18 +56,21 @@ article {
       }
       .quantity_field {
         display: flex;
-        align-items: baseline;
+        align-items: flex-end;
         justify-content: flex-end;
 
         label {
           display: block;
           margin-right: 2.5%;
+          padding-bottom: 5px;
         }
         input {
           display: block;
+          border-top: 1px solid $highlight-color;
+          border-bottom: 1px solid $highlight-color;
           outline: none;
           width: 40px;
-          padding-left: 10px;
+          height: 30px;
           text-align: center;
         }
         button {
@@ -70,9 +79,19 @@ article {
           padding-right: 5px;
           padding-left: 5px;
           border: 1px solid $highlight-color;
+          border-right: none;
           border-radius: 7px;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
           width: 30px;
           height: 30px;
+          &:last-child {
+            border-right: 1px solid $highlight-color;
+            border-left: none;
+            border-radius: 7px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
         }
       }
     }
