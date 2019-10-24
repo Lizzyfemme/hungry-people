@@ -1,5 +1,7 @@
 const express = require('express');
 const router  = express.Router();
+const twilioPhone = '+17609708429';
+const restaurantPhone = '+17782305559';
 
 module.exports = (db, twilioClient) => {
 
@@ -37,17 +39,17 @@ module.exports = (db, twilioClient) => {
     console.log(Object.keys(req.body));
     return twilioClient.messages.create({
       to: customer,
-      from: '+17609708429',
+      from: twilioPhone,
       body: `${message}`
     })
-    .then(() => {
-      res.redirect("/restaurant/employee");
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
-    });
+      .then(() => {
+        res.redirect("/restaurant/employee");
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
   });
 
   router.post("/orders/:orderID", (req, res) => {
@@ -63,7 +65,7 @@ module.exports = (db, twilioClient) => {
       .then(() => {
         return twilioClient.messages.create({
           to: customerPhone,
-          from: '+17609708429',
+          from: twilioPhone,
           body: `
 Your order has been received and will be ready in approximately ${prepTime} minutes. See you then!
 `
@@ -112,7 +114,7 @@ UPDATE orders SET completed_at = $1 WHERE id = $2 RETURNING *;
 
         return twilioClient.messages.create({
           to: order.customer_phone,
-          from: '+17609708429',
+          from: twilioPhone
           body: `
 Your order is ready! Come get it while it's hot!
 `

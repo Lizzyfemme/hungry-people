@@ -7,11 +7,12 @@
 
 const express = require('express');
 const router  = express.Router();
+const twilioPhone = '+17609708429';
+const restaurantPhone = '+17782305559';
 
 module.exports = (db, twilioClient) => {
   router.post("/", (req, res) => {
     let orderID;
-    const restaurantPhone = '7782305559';
     const customerPhone = req.body.customer_phone;
     const orderedAt = new Date();
     const values = [customerPhone, orderedAt];
@@ -43,7 +44,7 @@ module.exports = (db, twilioClient) => {
       .then(() => {
         return twilioClient.messages.create({
           to: req.body.customer_phone,
-          from: '+17609708429',
+          from: twilioPhone,
           body: `
 Thank you for placing an order with Bufala!
 We'll send you a text shortly to let you know how long your order will take.
@@ -53,7 +54,7 @@ We'll send you a text shortly to let you know how long your order will take.
       .then(() => {
         return twilioClient.messages.create({
           to: restaurantPhone,
-          from: '+17609708429',
+          from: twilioPhone,
           body: `
 A customer has placed an order!
 Please let the customer know how long their order will take by going to:
