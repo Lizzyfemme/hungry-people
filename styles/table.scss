@@ -15,7 +15,20 @@ $hover-color: #dcdbd2;
     }
   }
   td {
-    padding: 10px;
+    padding: 5px;
+
+    input[type="submit"]{
+    text-transform: uppercase;
+    font-weight:bold;
+    padding:15px;
+    margin-left:auto;
+    margin-right:auto;
+
+    }
+    a{
+      text-decoration:none;
+      display:block;
+    }
   }
   tr {
     &:nth-child(odd) {
@@ -30,16 +43,26 @@ $hover-color: #dcdbd2;
       }
       input[type="submit"] {
         background-color: $hover-color;
+        &:hover {
+          background-color: $bg-color;
+        }
       }
     }
     &:nth-child(even) {
       background-color: $bg-color;
+      input[type="submit"] {
+        background-color: $bg-color;
+        &:hover {
+          background-color:$hover-color;
+        }
+      }
     }
   }
   .order_table {
     background-color: transparent;
     tr {
       background-color: transparent;
+
     }
   }
 }
