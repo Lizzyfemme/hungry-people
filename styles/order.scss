@@ -154,9 +154,9 @@ button {
 }
 
 .cart {
-  display: block;
-  transform: none;
-  z-index: 20;
+  position: sticky;
+  z-index: 3;
+  justify-content: space-between;
   background-color: $highlight-color;
   color: $active-color;
   width: 960px;
@@ -165,13 +165,13 @@ button {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   padding: 10px;
-  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
   .hiddenError {
     padding: 5px;
   }
+  section {display: block}
   p {
     float: right;
   }
@@ -198,7 +198,6 @@ button {
 
 .cart ul {
   float: left;
-  margin-left: 20px;
 }
 
 .smallLogo {
