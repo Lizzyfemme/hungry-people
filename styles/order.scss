@@ -109,7 +109,19 @@ body {
   width:50vw;
   background-color: $bg-color;
   position: relative;
-  .menu-item {display: block;}
+  h3 {
+    margin: 0px;
+    text-align: center;
+  }
+  .menu-item {
+    display: block;
+    .quantity_field {
+      margin-bottom: 50px;
+    }
+    &:last-child .quantity_field {
+      margin-bottom: 20px;
+    }
+  }
   header{
     display:flex;
     justify-content:space-between;
