@@ -5,5 +5,6 @@ CREATE TABLE menu_items (
   menu_item_name VARCHAR(100) NOT NULL,
   description TEXT,
   photo_url VARCHAR(500),
-  price MONEY NOT NULL
+  price MONEY NOT NULL,
+  item_type_id INTEGER REFERENCES item_types(id) NOT NULL
 );

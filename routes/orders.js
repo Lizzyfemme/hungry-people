@@ -73,8 +73,9 @@ http://localhost:8080/restaurant/orders/${orderID}
   });
 
   router.get("/new", (req, res) => {
-    db.query(`SELECT id, menu_item_name, description, photo_url, price FROM menu_items;`)
+    db.query(`SELECT id, menu_item_name, description, photo_url, price,item_type_id FROM menu_items;`)
       .then(data => {
+        console.log(data)
         const menuItems = data.rows;
         res.render('orders/order', { menuItems });
       })

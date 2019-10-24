@@ -11,7 +11,8 @@
   </p>
 
   <form action="/orders" method="post" class="new-order">
-    <% for (const menuItem of menuItems) { %>
+    <% for (const menuItem of menuItems) {
+      if (menuItem.item_type_id === 1){ %>
     <article>
       <img src="<%= menuItem.photo_url %>"></img>
       <div class="words">
@@ -33,7 +34,7 @@
         </div>
       </div>
     </article>
-    <% } %>
+    <% }} %>
 
     <br>
 
