@@ -68,13 +68,13 @@ body {
 
 .parallax-wrapper {
   width: 100vw;
-  height:100vh;
+  height:110vh;
   padding-top:10vh;
   box-sizing: border-box;
   &::before {
     content:"";
     width: 100vw;
-    height:100vh;
+    height:110vh;
     margin-top:-60px;
     margin-bottom: 0px;
     top:0;
