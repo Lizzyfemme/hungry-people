@@ -4,28 +4,34 @@
 
 <div id="app">
   <h1>Thank you, we have received your order!</h1>
-  <h2>Your Order Summary:</h2>
 </div>
 
-<%let total = 0 %>
-<% for (const lineItem of lineItems) { %>
-<% total += Number.parseInt(lineItem.price.slice(1)) %>
+<div class="outside">
+  <div class="summaryBox">
+    <h2>Your Order Summary:</h2>
+    <%let total = 0 %>
+    <% for (const lineItem of lineItems) { %>
+      <% total += Number.parseInt(lineItem.price.slice(1)) %>
 
-<div class="summary">
-  <span> <%=lineItem.menu_item_name%> </span>
-  <span> &times; <%=lineItem.quantity%> </span>
-</div>
+      <div class="summary">
+        <span> <%=lineItem.menu_item_name%> </span>
+        <span> &times; <%=lineItem.quantity%> </span>
+      </div>
 
-<% } %>
+      <% } %>
 
-<section id="bill">
+      <section id="bill">
 
-  <hr>
-
-  <hr>
+        <div class="sum">
+          <h2>Total: $<%=total.toFixed(2)%> </h2>
+        </div>
+  </div>
 
   <div>
-    <h2>Total: $<%=total.toFixed(2)%> </h2>
+    <div>
+      <img class="map" src="/assets/bufalaMap.png"></img>
+    </div>
   </div>
+</div>
 
 </section>
