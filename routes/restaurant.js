@@ -114,7 +114,7 @@ UPDATE orders SET completed_at = $1 WHERE id = $2 RETURNING *;
 
         return twilioClient.messages.create({
           to: order.customer_phone,
-          from: twilioPhone
+          from: twilioPhone,
           body: `
 Your order is ready! Come get it while it's hot!
 `
