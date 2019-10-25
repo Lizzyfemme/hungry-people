@@ -24,7 +24,16 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
   resize: horizontal;
-  min-height: 550px;
+
+
+}
+p{
+  padding-left:2.5vw;
+  padding-right:2.5vw;
+}
+h1{
+  padding-left:2.5vw;
+  padding-right:2.5vw;
 }
 
 video {
@@ -46,7 +55,11 @@ video {
   margin-left:2.5vw;
   margin-right:2.5vw;
   margin-top:35px;
-}
+  @media only screen and (max-width: 400px){
+   display: none;
+    }
+  }
+
 
 .splash_image{
   display:block;
@@ -77,9 +90,20 @@ footer{
   background-color: $highlight-color;
   text-align: center;
   color:$bg-color;
-  height: 14vh;
+  height: 16vh;
+  p{
+   margin-top: 5px;
+   padding-top: 5px;
+  }
+  @media only screen and (max-width: 400px){
+    bottom:0;
+    height:23vh;
+  }
   .smallLogo{
     padding-top:20px;
+    @media only screen and (max-width: 400px){
+      display: none;
+       }
   }
 }
 

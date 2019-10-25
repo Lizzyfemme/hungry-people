@@ -25,6 +25,9 @@ input[type=number]::-webkit-outer-spin-button {
     display: block;
     margin-right: 2.5%;
     padding-bottom: 5px;
+    @media only screen and (max-width: 900px){
+      display:none;
+    }
   }
   input {
     background-color: rgba(250,250,250, 0.7);
@@ -102,6 +105,9 @@ body {
   background-size:cover;
   z-index: 2;
   position: relative;
+  @media only screen and (max-width: 400px){
+  background-position:right center;
+}
 }
 
 .floating_words{
@@ -110,6 +116,12 @@ body {
   width:50vw;
   background-color: rgba(250,250,250, 0.7);
   position: relative;
+  @media only screen and (max-width: 400px){
+    display:flex;
+    flex-direction: column;
+    font-size:70%;
+    width:75vw;
+  }
   h3 {
     margin: 0px;
     text-align: center;
@@ -177,16 +189,29 @@ button {
   right: 0;
   bottom: 0;
   left: 0;
+  @media only screen and (max-width: 400px){
+
+    padding-left:2.5vw;
+    padding-right:2.5vw;
+    font-size: 70%;
+  }
   .hiddenError {
     padding: 5px;
   }
-  section {display: block}
+  section {
+    display: block;
+
+  }
   p {
     float: right;
   }
   .inputs {
     clear: right;
     float: right;
+    @media only screen and (max-width: 400px){
+      display: flex;
+      align-items:center;
+    }
     label { margin-right: 10px; }
     input[type=text] {
       width: 150px;
@@ -207,6 +232,9 @@ button {
 
 .cart ul {
   float: left;
+  @media only screen and (max-width: 400px){
+    display:none;
+  }
 }
 
 .smallLogo {
@@ -216,4 +244,7 @@ button {
   margin-left: 10px;
   width: 150px;
   padding: 0;
+  @media only screen and (max-width: 400px){
+    display: none;
+  }
 }

@@ -42,6 +42,10 @@ nav {
 
 body.home .container {
   margin-top: -70px;
+  @media only screen and (max-width: 400px){
+    margin-right:2.5vw;
+    margin-left:2.5vw;
+  }
 }
 
 .home-button img {
