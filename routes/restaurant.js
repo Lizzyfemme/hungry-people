@@ -1,7 +1,6 @@
 const express = require('express');
 const router  = express.Router();
 const twilioPhone = '+17609708429';
-const restaurantPhone = '+17782305559';
 
 module.exports = (db, twilioClient) => {
 
